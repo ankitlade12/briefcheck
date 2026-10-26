@@ -1,0 +1,231 @@
+{
+  "split": "heldout",
+  "engineHash": "b31430496d16631388c8400da1b992893ddc6bb3cfb900cc171425793d87b8a5",
+  "runAt": "2026-10-26T04:33:01.095Z",
+  "mode": "deterministic",
+  "labeling": "Synthetic cases labeled by the implementing agent; not an independent human evaluation. Held-out cases not used to tune after this run.",
+  "counts": {
+    "cases": 20,
+    "correct": 20,
+    "truePositive": 13,
+    "falsePositive": 0,
+    "falseNegative": 0,
+    "verifiedEvidence": 27,
+    "totalEvidence": 27
+  },
+  "precision": 1,
+  "recall": 1,
+  "results": [
+    {
+      "id": "H01",
+      "gold": "contradiction",
+      "actual": [
+        "contradiction"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 4
+    },
+    {
+      "id": "H02",
+      "gold": "contradiction",
+      "actual": [
+        "contradiction"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 1
+    },
+    {
+      "id": "H03",
+      "gold": "contradiction",
+      "actual": [
+        "contradiction"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H04",
+      "gold": "contradiction",
+      "actual": [
+        "contradiction"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H05",
+      "gold": "contradiction",
+      "actual": [
+        "contradiction"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H06",
+      "gold": "omission",
+      "actual": [
+        "omission"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H07",
+      "gold": "omission",
+      "actual": [
+        "omission"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H08",
+      "gold": "omission",
+      "actual": [
+        "omission"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H09",
+      "gold": "omission",
+      "actual": [
+        "omission"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H10",
+      "gold": "ambiguity",
+      "actual": [
+        "ambiguity"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H11",
+      "gold": "ambiguity",
+      "actual": [
+        "ambiguity"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 1
+    },
+    {
+      "id": "H12",
+      "gold": "ambiguity",
+      "actual": [
+        "ambiguity"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H13",
+      "gold": "ambiguity",
+      "actual": [
+        "ambiguity"
+      ],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H14",
+      "gold": "legitimate",
+      "actual": [],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H15",
+      "gold": "legitimate",
+      "actual": [],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H16",
+      "gold": "legitimate",
+      "actual": [],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H17",
+      "gold": "legitimate",
+      "actual": [],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H18",
+      "gold": "legitimate",
+      "actual": [],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H19",
+      "gold": "legitimate",
+      "actual": [],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    },
+    {
+      "id": "H20",
+      "gold": "legitimate",
+      "actual": [],
+      "unresolved": 0,
+      "expectedAbstention": false,
+      "correct": true,
+      "timingMs": 0
+    }
+  ],
+  "limitations": [
+    "Small explicit-pattern dataset, not a production accuracy estimate.",
+    "Live model quality, provider latency/cost and simple-prompt baseline not measured without credentials.",
+    "Expected abstention on unsupported wording still counts as a miss for in-scope recall."
+  ]
+}

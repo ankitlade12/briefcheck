@@ -1,0 +1,36 @@
+{
+  "name": "briefcheck",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env server/index.mjs",
+    "build": "tsc --noEmit && vite build",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm test && npm run build",
+    "test:browser": "node tests/browser.mjs",
+    "test:api": "node tests/api.mjs",
+    "test:imports": "node tests/imports.mjs",
+    "test:a11y": "node tests/accessibility.mjs"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^4.0.102",
+    "ai": "latest",
+    "cheerio": "^1.2.0",
+    "pdfjs-dist": "^6.4.299",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.55.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}
