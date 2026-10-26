@@ -8,9 +8,15 @@ English-only at the user's request. AI extraction is real OpenAI structured outp
 
 An independent AI agent authored new cases before inspecting the implementation. It found silent unsupported deliverables and collaboration races. Their original failures, separate retests, delayed-body permission checks, and expanded functional tests are preserved in evaluation/. This is not independent human review or an organizer pilot.
 
+## Published artifacts
+
+- Public source: https://github.com/ankitlade12/briefcheck (MIT license; complete run instructions and planning documents).
+- Demonstration: https://github.com/ankitlade12/briefcheck/releases/tag/demo-v1 — 36.8 seconds, silent real browser capture, H.264 MP4, 1440×1000. Shows deterministic review, 180-second test, evidence, correction, rerun and export. Representative frame inspected; assertions passed during recording.
+- Live GitHub integration delivered a synthetic report; unauthenticated public read returned HTTP 200.
+- Live English AI smoke test, 26 unit tests, production build, browser/API/keyboard/import/accessibility checks and independent-agent retests passed.
+
 ## Remaining submission actions
 
-- Record and inspect the working demo; publish its file with the repository release.
 - Upload the video publicly to YouTube or Vimeo and add its URL to Devpost. Repository-hosted video alone does not satisfy that platform requirement.
 - Learner writes project description, submission fields and exit survey in their own words. Agent can check factual gaps and spelling/grammar.
 - Submit before October 26, 2026 at 4 p.m. America/Chicago. Keep judging access available.

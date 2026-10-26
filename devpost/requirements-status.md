@@ -26,7 +26,7 @@ The user's explicit scope includes P0, P1 and P2. **Implemented** means code exi
 | FR20 reversibility | Undo records a new revision, old review inspection, local-only edits; browser test | No automatic external event publishing |
 | P1 persistence / roles / history | SQLite, explicit save, login, owners/editors/reviewers, access revocation, optimistic concurrency, private templates; API tests | Local deployment only; independent security/load evaluation pending |
 | P1 coverage / baseline | Coverage matrix, previous or selected baseline, dependency graph, raw evaluation download | No universal compliance score |
-| P2 integrations | Configurable authenticated HTTPS report webhook; explicit send confirmation; JSON/HTML interchange | **Not live-verified:** destination and credentials not supplied. Native service-specific integrations not specified by user |
+| P2 integrations | Configurable authenticated HTTPS report webhook; explicit send confirmation; JSON/HTML interchange | **Verified:** local GitHub public archive, explicit confirmation and anonymous read. Generic webhook delivery remains untested; no native Devpost integration. |
 | P2 templates | Private per-user templates restore source cards into a fresh session | Stores source content; privacy disclosed |
 | P2 multiple languages | Provider prompt preserves exact source-language quotes and returns English normalized values; Spanish quote/schema test | **Deferred by user:** release is English-only. Earlier multilingual experiments remain archived research. |
 | P2 advanced conditions | Restricted membership and Boolean evaluator, custom fact UI, explicit unknown outcomes | **Partial:** broad conditional language quality needs live model evaluation; unsupported fields/legal clauses abstain |

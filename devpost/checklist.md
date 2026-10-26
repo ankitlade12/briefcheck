@@ -22,8 +22,8 @@ mode: fast
   Verify (mechanical): regression and browser flow.
   Learner check: align duration wording, rerun and inspect old evidence.
   Commit: feat: add versioned correction and audit exports
-- [ ] **3. Expanded workspace**
-  Becomes usable: imports, persistence, roles, templates, integration and multilingual/conditional extraction.
+- [x] **3. Expanded workspace (English release)**
+  Becomes usable: imports, persistence, roles, templates, integration and bounded English conditional extraction.
   Why now: depends on reliable review semantics.
   PRD ref: Expanded Workspace
   Spec ref: Server; Model Boundary
@@ -41,11 +41,11 @@ mode: fast
 - [x] App map and reusable boundary-testing practice offered. Experienced user requested agent-led testing; no personal learning outcome inferred.
 ## Revisions
 - User explicitly requests full P0/P1/P2 coverage; no roadmap feature silently cut.
-- User directs autonomous building from supplied PRD; ceremonial approval pauses omitted. Technical plan remains draft pending actual review, rather than fabricating approval.
+- User directs autonomous building from supplied PRD; ceremonial approval pauses omitted. Technical plan adopted under the user’s build authorization; user personally reviewing the code is not claimed.
 
-- Implemented the expanded workspace code, but slice 3 remains open for live AI/integration configuration and language evaluation.
+- Expanded English workspace is implemented; live English AI and GitHub integration verified. Broad conditional-language accuracy and human research remain limitations.
 - One verified implementation checkpoint is being created for the integrated build; no earlier incremental commits are claimed.
-- Verification completed: 23 unit/regression checks; browser correction/retest/export and failure recovery; API collaboration/access; live public-page and synthetic-PDF imports; source/review accessibility audit; production build.
+- Verification completed: 26 unit/regression checks; browser correction/retest/export and failure recovery; API collaboration/access; live public-page and synthetic-PDF imports; source/review accessibility audit; production build.
 - App map and an optional reusable boundary-testing practice are prepared. No user learning or final acceptance is inferred.
 
 - English-only release requested; multilingual feature removed from current release scope.

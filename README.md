@@ -90,3 +90,7 @@ The historical engine-1.0 40-case evaluation is synthetic and agent-labeled. A s
 ## Provenance
 
 Created as new source code for Build With AI: Basics on October 25, 2026 (America/Chicago). The supplied `BriefCheck_Product_Requirements.docx` is pre-existing product planning; its extracted contents are preserved in `devpost/source-prd.txt`. The official MIT-licensed Devpost Learn skills are included under `skills/`; planning records identify actual authorization and outstanding learner review rather than fabricating completed interviews. Third-party dependencies and their licenses are recorded by `package-lock.json` and their installed package metadata. Synthetic fixtures are authored for this project; the public example contains short dated criterion-name excerpts with source links.
+
+## Demonstration and release status
+
+[Download the 36.8-second working demo](https://github.com/ankitlade12/briefcheck/releases/tag/demo-v1). The silent recording shows deterministic English review, exact evidence, a 180-second scenario, draft correction, rerun and export. Live English AI and the GitHub report archive have separate recorded verification. See [shipping status](devpost/shipping-status.md) for the remaining YouTube/Vimeo and Devpost submission steps.
