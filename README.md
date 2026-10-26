@@ -93,6 +93,4 @@ Created as new source code for Build With AI: Basics on October 25, 2026 (Americ
 
 ## Demonstration and release status
 
-[Download the 36.8-second working demo](https://github.com/ankitlade12/briefcheck/releases/tag/demo-v1). The silent recording shows deterministic English review, exact evidence, a 180-second scenario, draft correction, rerun and export. Live English AI and the GitHub report archive have separate recorded verification. See [shipping status](devpost/shipping-status.md) for the remaining YouTube/Vimeo and Devpost submission steps.
-
-Latest submission media: [narrated 2:41 walkthrough and seven real-app gallery images](https://github.com/ankitlade12/briefcheck/releases/tag/submission-media-v1). Includes captions, subtitle file, and reproduction notes in [the media pack](devpost/media-pack.md).
+A narrated 2:41 walkthrough and seven real-app screenshots were prepared and verified. Media files are kept locally under ignored `artifacts/submission/` at the owner's request; they are not distributed through GitHub releases. See [media reproduction notes](devpost/media-pack.md) and [shipping status](devpost/shipping-status.md). Public YouTube/Vimeo publication and final Devpost submission remain separate steps.

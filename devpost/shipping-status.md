@@ -8,10 +8,10 @@ English-only at the user's request. AI extraction is real OpenAI structured outp
 
 An independent AI agent authored new cases before inspecting the implementation. It found silent unsupported deliverables and collaboration races. Their original failures, separate retests, delayed-body permission checks, and expanded functional tests are preserved in evaluation/. This is not independent human review or an organizer pilot.
 
-## Published artifacts
+## Source and local media
 
 - Public source: https://github.com/ankitlade12/briefcheck (MIT license; complete run instructions and planning documents).
-- Demonstration: https://github.com/ankitlade12/briefcheck/releases/tag/demo-v1 — 36.8 seconds, silent real browser capture, H.264 MP4, 1440×1000. Shows deterministic review, 180-second test, evidence, correction, rerun and export. Representative frame inspected; assertions passed during recording.
+- Demonstration: local `artifacts/submission/briefcheck-walkthrough.mp4` — narrated 2:41 real-browser walkthrough. Seven screenshots and captions are also local. GitHub media releases were removed at the owner’s request.
 - Live GitHub integration delivered a synthetic report; unauthenticated public read returned HTTP 200.
 - Live English AI smoke test, 26 unit tests, production build, browser/API/keyboard/import/accessibility checks and independent-agent retests passed.
 
