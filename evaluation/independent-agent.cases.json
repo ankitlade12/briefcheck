@@ -1,0 +1,17 @@
+{
+  "provenance": "Independent AI-agent review, not independent human validation. Cases authored from PRD and ledger before reading engine or prior evaluation cases.",
+  "cases": [
+    {"id":"same-bound-different-unit","texts":["Demo videos must be at most 2 minutes.","Demo videos must be at most 120 seconds."],"expect":"No conflict; equivalent boundaries."},
+    {"id":"disjoint-team-bounds","texts":["Teams must have at least 5 members.","Teams must have at most 4 members."],"expect":"Detect incompatible mandatory team bounds."},
+    {"id":"recommendation-vs-rule","texts":["Demo videos should be at most 2 minutes.","Demo videos must be exactly 3 minutes."],"expect":"Recommendation divergence must not be mandatory contradiction."},
+    {"id":"different-artifacts","texts":["Pitch videos must be at most 2 minutes.","Demo videos must be at least 3 minutes."],"expect":"Different artifact subjects must not be declared contradictory."},
+    {"id":"explicit-exception","texts":["Teams must have at most 4 members, except student teams may have 6 members.","Student teams may have 6 members."],"expect":"No contradiction; exception must not become unconditional maximum-four predicate."},
+    {"id":"negated-requirement","texts":["A demo video is not required.","A demo video is required."],"expect":"Detect incompatible required versus not-required deliverable, or explicitly abstain."},
+    {"id":"timezone-equivalence","texts":["Submission deadline: 2026-11-01T18:00:00Z.","Submission deadline: 2026-11-01T12:00:00-06:00."],"expect":"No deadline contradiction; same instant."},
+    {"id":"missing-zone","texts":["Submission deadline: November 1, 2026 at 6 PM.","Submission deadline: 2026-11-01T18:00:00Z."],"expect":"Unzoned deadline must remain unresolved, no definitive contradiction or pass."},
+    {"id":"optional-artifact","texts":["You may optionally include a slide deck.","A slide deck is required."],"expect":"Detect optional versus required inconsistency or abstain; do not extract optional as required."},
+    {"id":"conditional-bound","texts":["If your demo includes a live performance, the video must be at most 5 minutes.","Demo videos must be at most 3 minutes."],"expect":"Conditional limit cannot be treated as unconditional; no disjoint contradiction."},
+    {"id":"range-and-exact","texts":["Teams must have between 2 and 4 members.","Teams must have exactly 5 members."],"expect":"Detect disjoint team sizes or explicitly mark unsupported range unresolved."},
+    {"id":"revision-removes-evidence","texts":["Demo videos must be at most 2 minutes.","Demo videos must be at least 3 minutes."],"revision":"Video length will be announced later.","expect":"Initial contradiction must not become resolved when replacement removes interpretable evidence."}
+  ]
+}

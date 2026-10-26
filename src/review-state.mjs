@@ -7,7 +7,10 @@ export function carryReviewState(previous, next) {
     if (old && decision)
       next.decisions[finding.id] = {
         ...decision,
-        needsReview: old.evidence.some(
+        needsReview: previous.requirements.filter(r=>old.requirementIds.includes(r.id)).some(r=>{
+          const n=next.requirements.find(x=>x.id===r.id);
+          return !n || JSON.stringify([r.predicate,r.modality,r.scope,r.items,r.status]) !== JSON.stringify([n.predicate,n.modality,n.scope,n.items,n.status]);
+        }) || old.evidence.some(
           (e) => !next.versions.some((v) => v.versionId === e.versionId),
         ),
       };

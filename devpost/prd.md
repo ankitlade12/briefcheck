@@ -24,3 +24,6 @@ Light editorial workspace, restrained teal accent, spacious evidence columns, re
 Source PRD T01–T15 plus keyboard end-to-end flow, provider failure, unsupported interpretation, 40-case evaluation with held-out split and raw counts. Do not claim evaluation success before execution.
 ## Product Decisions
 No public sharing by default. Text stays in memory for anonymous review; persistence is explicit. AI requests disclose provider transfer. No automatic policy precedence. All simulations and synthetic samples are labeled.
+
+## Current release constraint
+English-only, as explicitly requested by the user. Earlier multilingual smoke results are research artifacts, not a supported-feature claim.

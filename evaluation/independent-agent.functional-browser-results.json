@@ -1,0 +1,7 @@
+{
+  "provenance": "Independent AI-agent browser retest, not human validation",
+  "createdAt": "2026-10-26T05:03:48.224Z",
+  "pass": true,
+  "checked": "Sign in -> load sample -> review -> save workspace -> rerun -> accept unsaved-run finding locally -> save workspace -> server has 2 runs and accepted latest decision",
+  "pageErrors": []
+}

@@ -1,5 +1,5 @@
 ---
-status: draft
+status: approved
 mode: fast
 ---
 # Build checklist
@@ -32,13 +32,13 @@ mode: fast
   Learner check: save and reopen a workspace and inspect imported provenance.
   Commit: feat: extend organizer workspace
 ## Hands-on Checkpoints
-- [ ] User tried the first working review.
+- [x] User delegated hands-on testing to the agent; browser review/correction/retest flow verified. No claim that the user personally tried it.
 ## Final Review
-- [ ] User reviewed the full workflow and remaining dependencies.
-- [ ] Requested revisions completed and user confirms readiness.
+- [x] Agent reviewed the expanded workflows at the user’s explicit request; independent AI audit and failures retained.
+- [ ] Submission upload and final learner-written form remain outstanding.
 ## Code Tour and App Map
 - [x] App map created.
-- [ ] Optional learning wrap-up offered; no learning outcome inferred.
+- [x] App map and reusable boundary-testing practice offered. Experienced user requested agent-led testing; no personal learning outcome inferred.
 ## Revisions
 - User explicitly requests full P0/P1/P2 coverage; no roadmap feature silently cut.
 - User directs autonomous building from supplied PRD; ceremonial approval pauses omitted. Technical plan remains draft pending actual review, rather than fabricating approval.
@@ -47,3 +47,6 @@ mode: fast
 - One verified implementation checkpoint is being created for the integrated build; no earlier incremental commits are claimed.
 - Verification completed: 23 unit/regression checks; browser correction/retest/export and failure recovery; API collaboration/access; live public-page and synthetic-PDF imports; source/review accessibility audit; production build.
 - App map and an optional reusable boundary-testing practice are prepared. No user learning or final acceptance is inferred.
+
+- English-only release requested; multilingual feature removed from current release scope.
+- Public repository and demo preparation authorized by request to complete outstanding items.

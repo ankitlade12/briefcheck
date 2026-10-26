@@ -1,0 +1,558 @@
+{
+  "runAt": "2026-10-26T04:59:04.513Z",
+  "note": "Three synthetic live-provider smoke cases; not language-expert validation. Hindi modality can be advisory and must not be overclaimed.",
+  "results": [
+    {
+      "language": "English",
+      "status": "ready",
+      "model": "gpt-5-mini",
+      "timingMs": 10012,
+      "usage": {
+        "inputTokens": 814,
+        "inputTokenDetails": {
+          "noCacheTokens": 814,
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 0
+        },
+        "outputTokens": 869,
+        "outputTokenDetails": {
+          "textTokens": 549,
+          "reasoningTokens": 320
+        },
+        "totalTokens": 1683,
+        "raw": {
+          "input_tokens": 814,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 869,
+          "output_tokens_details": {
+            "reasoning_tokens": 320
+          },
+          "total_tokens": 1683
+        }
+      },
+      "findings": [
+        {
+          "type": "ambiguity",
+          "topic": "duration"
+        },
+        {
+          "type": "omission",
+          "topic": "criteria"
+        }
+      ],
+      "validEvidence": true,
+      "durationOutcomes": [
+        {
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lte",
+            "field": "duration",
+            "value": 180,
+            "values": null
+          },
+          "result": "Meets this stated requirement"
+        },
+        {
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lt",
+            "field": "duration",
+            "value": 180,
+            "values": null
+          },
+          "result": "Does not meet this stated requirement"
+        }
+      ],
+      "requirements": [
+        {
+          "documentId": "overview",
+          "topic": "duration",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lte",
+            "field": "duration",
+            "value": 180,
+            "values": null
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [],
+          "conditions": [],
+          "exceptions": [],
+          "quote": "Demo video must be at most 3 minutes.",
+          "start": null,
+          "end": null,
+          "id": "c9o0uo",
+          "evidence": {
+            "versionId": "overview-19f637e49eb7260a-1y3iypi",
+            "start": 0,
+            "end": 37,
+            "mapping": "server exact unique quote",
+            "quote": "Demo video must be at most 3 minutes.",
+            "validation": "verified"
+          }
+        },
+        {
+          "documentId": "rules",
+          "topic": "duration",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lt",
+            "field": "duration",
+            "value": 180,
+            "values": null
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [],
+          "conditions": [],
+          "exceptions": [],
+          "quote": "Demo video must be under 3 minutes.",
+          "start": null,
+          "end": null,
+          "id": "1h38hua",
+          "evidence": {
+            "versionId": "rules-e898dc2259988c80-11vj6wv",
+            "start": 0,
+            "end": 35,
+            "mapping": "server exact unique quote",
+            "quote": "Demo video must be under 3 minutes.",
+            "validation": "verified"
+          }
+        },
+        {
+          "documentId": "overview",
+          "topic": "criteria",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": null,
+          "items": [
+            "Design",
+            "Innovation"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "conditions": [],
+          "exceptions": [],
+          "quote": "Judging criteria: Design, Innovation.",
+          "start": null,
+          "end": null,
+          "id": "3yvr2d",
+          "evidence": {
+            "versionId": "overview-19f637e49eb7260a-1y3iypi",
+            "start": 38,
+            "end": 75,
+            "mapping": "server exact unique quote",
+            "quote": "Judging criteria: Design, Innovation.",
+            "validation": "verified"
+          }
+        },
+        {
+          "documentId": "rules",
+          "topic": "criteria",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": null,
+          "items": [
+            "Design",
+            "Innovation",
+            "Impact"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "conditions": [],
+          "exceptions": [],
+          "quote": "Judging criteria: Design, Innovation, Impact.",
+          "start": null,
+          "end": null,
+          "id": "j336bz",
+          "evidence": {
+            "versionId": "rules-e898dc2259988c80-11vj6wv",
+            "start": 36,
+            "end": 81,
+            "mapping": "server exact unique quote",
+            "quote": "Judging criteria: Design, Innovation, Impact.",
+            "validation": "verified"
+          }
+        }
+      ],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "language": "Spanish",
+      "status": "ready",
+      "model": "gpt-5-mini",
+      "timingMs": 11368,
+      "usage": {
+        "inputTokens": 828,
+        "inputTokenDetails": {
+          "noCacheTokens": 828,
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 0
+        },
+        "outputTokens": 913,
+        "outputTokenDetails": {
+          "textTokens": 529,
+          "reasoningTokens": 384
+        },
+        "totalTokens": 1741,
+        "raw": {
+          "input_tokens": 828,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 913,
+          "output_tokens_details": {
+            "reasoning_tokens": 384
+          },
+          "total_tokens": 1741
+        }
+      },
+      "findings": [
+        {
+          "type": "ambiguity",
+          "topic": "duration"
+        },
+        {
+          "type": "omission",
+          "topic": "criteria"
+        }
+      ],
+      "validEvidence": true,
+      "durationOutcomes": [
+        {
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lte",
+            "field": "duration",
+            "value": 180,
+            "values": null
+          },
+          "result": "Meets this stated requirement"
+        },
+        {
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lt",
+            "field": "duration",
+            "value": 180,
+            "values": null
+          },
+          "result": "Does not meet this stated requirement"
+        }
+      ],
+      "requirements": [
+        {
+          "documentId": "overview",
+          "topic": "duration",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lte",
+            "field": "duration",
+            "value": 180,
+            "values": null
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [],
+          "conditions": [],
+          "exceptions": [],
+          "quote": "El vídeo de demostración debe durar como máximo 3 minutos.",
+          "start": null,
+          "end": null,
+          "id": "1382sm6",
+          "evidence": {
+            "versionId": "overview-51a5dadeb6c7feee-1y3iypi",
+            "start": 0,
+            "end": 58,
+            "mapping": "server exact unique quote",
+            "quote": "El vídeo de demostración debe durar como máximo 3 minutos.",
+            "validation": "verified"
+          }
+        },
+        {
+          "documentId": "rules",
+          "topic": "duration",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lt",
+            "field": "duration",
+            "value": 180,
+            "values": null
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [],
+          "conditions": [],
+          "exceptions": [],
+          "quote": "El vídeo de demostración debe durar menos de 3 minutos.",
+          "start": null,
+          "end": null,
+          "id": "1su33wc",
+          "evidence": {
+            "versionId": "rules-d8b9f10206fd0898-11vj6wv",
+            "start": 0,
+            "end": 55,
+            "mapping": "server exact unique quote",
+            "quote": "El vídeo de demostración debe durar menos de 3 minutos.",
+            "validation": "verified"
+          }
+        },
+        {
+          "documentId": "overview",
+          "topic": "criteria",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": null,
+          "items": [
+            "Design",
+            "Innovation"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "conditions": [],
+          "exceptions": [],
+          "quote": "Criterios de evaluación: Diseño, Innovación.",
+          "start": null,
+          "end": null,
+          "id": "qxno7c",
+          "evidence": {
+            "versionId": "overview-51a5dadeb6c7feee-1y3iypi",
+            "start": 59,
+            "end": 103,
+            "mapping": "server exact unique quote",
+            "quote": "Criterios de evaluación: Diseño, Innovación.",
+            "validation": "verified"
+          }
+        },
+        {
+          "documentId": "rules",
+          "topic": "criteria",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": null,
+          "items": [
+            "Design",
+            "Innovation",
+            "Impact"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "conditions": [],
+          "exceptions": [],
+          "quote": "Criterios de evaluación: Diseño, Innovación, Impacto.",
+          "start": null,
+          "end": null,
+          "id": "t6q9yb",
+          "evidence": {
+            "versionId": "rules-d8b9f10206fd0898-11vj6wv",
+            "start": 56,
+            "end": 109,
+            "mapping": "server exact unique quote",
+            "quote": "Criterios de evaluación: Diseño, Innovación, Impacto.",
+            "validation": "verified"
+          }
+        }
+      ],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "language": "Hindi",
+      "status": "ready",
+      "model": "gpt-5-mini",
+      "timingMs": 10242,
+      "usage": {
+        "inputTokens": 841,
+        "inputTokenDetails": {
+          "noCacheTokens": 841,
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 0
+        },
+        "outputTokens": 950,
+        "outputTokenDetails": {
+          "textTokens": 566,
+          "reasoningTokens": 384
+        },
+        "totalTokens": 1791,
+        "raw": {
+          "input_tokens": 841,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 950,
+          "output_tokens_details": {
+            "reasoning_tokens": 384
+          },
+          "total_tokens": 1791
+        }
+      },
+      "findings": [
+        {
+          "type": "ambiguity",
+          "topic": "duration"
+        },
+        {
+          "type": "omission",
+          "topic": "criteria"
+        }
+      ],
+      "validEvidence": true,
+      "durationOutcomes": [
+        {
+          "scope": "general",
+          "modality": "recommended",
+          "predicate": {
+            "op": "lte",
+            "field": "duration",
+            "value": 180,
+            "values": null
+          },
+          "result": "Meets recommendation"
+        },
+        {
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lt",
+            "field": "duration",
+            "value": 180,
+            "values": null
+          },
+          "result": "Does not meet this stated requirement"
+        }
+      ],
+      "requirements": [
+        {
+          "documentId": "overview",
+          "topic": "duration",
+          "scope": "general",
+          "modality": "recommended",
+          "predicate": {
+            "op": "lte",
+            "field": "duration",
+            "value": 180,
+            "values": null
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [],
+          "conditions": [],
+          "exceptions": [],
+          "quote": "डेमो वीडियो की अवधि अधिकतम 3 मिनट होनी चाहिए।",
+          "start": null,
+          "end": null,
+          "id": "1k0srwp",
+          "evidence": {
+            "versionId": "overview-a74885b27af98fc9-1y3iypi",
+            "start": 0,
+            "end": 45,
+            "mapping": "server exact unique quote",
+            "quote": "डेमो वीडियो की अवधि अधिकतम 3 मिनट होनी चाहिए।",
+            "validation": "verified"
+          }
+        },
+        {
+          "documentId": "overview",
+          "topic": "criteria",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": null,
+          "items": [
+            "Design",
+            "Innovation"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "conditions": [],
+          "exceptions": [],
+          "quote": "मूल्यांकन मानदंड: डिज़ाइन, नवाचार।",
+          "start": null,
+          "end": null,
+          "id": "182pn1",
+          "evidence": {
+            "versionId": "overview-a74885b27af98fc9-1y3iypi",
+            "start": 46,
+            "end": 80,
+            "mapping": "server exact unique quote",
+            "quote": "मूल्यांकन मानदंड: डिज़ाइन, नवाचार।",
+            "validation": "verified"
+          }
+        },
+        {
+          "documentId": "rules",
+          "topic": "duration",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lt",
+            "field": "duration",
+            "value": 180,
+            "values": null
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [],
+          "conditions": [],
+          "exceptions": [],
+          "quote": "डेमो वीडियो की अवधि 3 मिनट से कम होनी चाहिए।",
+          "start": null,
+          "end": null,
+          "id": "167qr67",
+          "evidence": {
+            "versionId": "rules-1a7c86349f6e7866-11vj6wv",
+            "start": 0,
+            "end": 44,
+            "mapping": "server exact unique quote",
+            "quote": "डेमो वीडियो की अवधि 3 मिनट से कम होनी चाहिए।",
+            "validation": "verified"
+          }
+        },
+        {
+          "documentId": "rules",
+          "topic": "criteria",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": null,
+          "items": [
+            "Design",
+            "Innovation",
+            "Impact"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "conditions": [],
+          "exceptions": [],
+          "quote": "मूल्यांकन मानदंड: डिज़ाइन, नवाचार, प्रभाव।",
+          "start": null,
+          "end": null,
+          "id": "z1h9g8",
+          "evidence": {
+            "versionId": "rules-1a7c86349f6e7866-11vj6wv",
+            "start": 45,
+            "end": 87,
+            "mapping": "server exact unique quote",
+            "quote": "मूल्यांकन मानदंड: डिज़ाइन, नवाचार, प्रभाव।",
+            "validation": "verified"
+          }
+        }
+      ],
+      "errors": [],
+      "passed": true
+    }
+  ]
+}

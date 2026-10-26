@@ -53,14 +53,14 @@ Restart the server, then select **AI-assisted**. Direct OpenAI uses the Response
 
 Live AI transfers supplied text to the configured provider. The application does not claim zero provider retention. Configure your provider's retention and monetary spend limits before using sensitive documents or exposing a hosted demo. `BRIEFCHECK_MAX_AI_REVIEWS` is a per-process request ceiling, **not** a monetary budget. There are at most two provider calls per review, a 60-second timeout, bounded output, concurrency control, and request throttling. Failed extraction never silently becomes deterministic output.
 
-**No live key was available during implementation. Live provider quality, latency, cost, and multilingual accuracy are not yet verified.** Mocked tests cover schema validation, exact multilingual quotes, and bounded repair; they do not establish model accuracy.
+**Release scope: English only.** Live OpenAI tests verified exact evidence, duration boundaries and criterion omissions on synthetic English input. Earlier Spanish/Hindi experiments are archived research, not supported-release claims. Provider retention and account billing are not certified by these tests. See `evaluation/live-ai-english-results.json` and the independent-agent audit artifacts for actual results and limitations.
 
 ## Features
 
 - Two to four labeled sources, 40,000 combined characters; duplicate detection and explicit coverage expectations.
 - Public HTTPS imports with DNS pinning, private-network blocking, checked redirects, size/time limits; text-PDF imports with page provenance. No authenticated imports, OCR, crawling, or scripted-page rendering.
 - Explicit English deterministic extraction for video duration, team size, zoned deadlines, criterion sets, and common deliverables. Unsupported wording remains unreviewed or unresolved.
-- Optional structured AI extraction, source-language evidence, modality, scopes, conditions and exceptions. Restricted comparison/set/Boolean evaluation never executes source or model code.
+- Optional structured AI extraction for English materials, verbatim evidence, modality, scopes, conditions and exceptions. Restricted comparison/set/Boolean evaluation never executes source or model code.
 - Exact evidence offsets, SHA-256 source hashes, immutable review snapshots, source-to-topic graph and coverage counts.
 - Boundary tests, custom typed scenario facts, saved tests, reruns, and honest unresolved states when evidence disappears.
 - Accept/dismiss/defer decisions; organizer interpretation corrections; intentional policy suggestions; draft revision reasons, undo, baseline comparisons and downstream references.
@@ -74,7 +74,7 @@ Anonymous reviews live in browser memory. Explicit private saves go into `.data/
 
 For remote use, supply a persistent writable volume, HTTPS reverse proxy, `BRIEFCHECK_SECURE_COOKIE=true`, `BRIEFCHECK_HOSTNAME`, and an appropriate bind address. This local prototype has not been load-tested or independently security-audited for public hosting. A single-process SQLite store and per-process rate limits are not a distributed deployment design.
 
-Set `BRIEFCHECK_WEBHOOK_URL` and optionally `BRIEFCHECK_WEBHOOK_TOKEN` for a report destination you control or are authorized to use. Sending requires sign-in and a separate explicit UI confirmation. No webhook was contacted during implementation. This generic connector is not a claim of native Devpost, Slack, Jira, or Notion integration.
+Set `BRIEFCHECK_WEBHOOK_URL` and optionally `BRIEFCHECK_WEBHOOK_TOKEN` for a report destination you control or are authorized to use. Sending requires sign-in and a separate explicit UI confirmation. Alternatively, set `BRIEFCHECK_GITHUB_REPO=owner/repository` for a local-only public report archive using your authenticated GitHub CLI. It is restricted to loopback requests and refuses a remote bind. The UI requires explicit confirmation because the report becomes public. Do not configure it on shared/untrusted machines. This is not a native Devpost integration.
 
 ## Evidence and limits
 
@@ -85,7 +85,7 @@ Set `BRIEFCHECK_WEBHOOK_URL` and optionally `BRIEFCHECK_WEBHOOK_TOKEN` for a rep
 - [Hackathon checklist](devpost/hackathon-checklist.md)
 - [App map](devpost/app-map.html)
 
-The 40-case evaluation is synthetic and agent-labeled. It is not independent human evaluation, a production accuracy estimate, or a comparison against a simple LLM prompt. Exact quote validity does not prove interpretation correctness. The tool does not decide eligibility, legal compliance, plagiarism, or winners, and is not endorsed by Devpost.
+The historical engine-1.0 40-case evaluation is synthetic and agent-labeled. A separate agent authored and ran 12 new adversarial cases; it found issues, preserved the failures, and verified fixes including four delayed-write permission checks. It is not independent human evaluation, a production accuracy estimate, or a comparison against a simple LLM prompt. Exact quote validity does not prove interpretation correctness. The tool does not decide eligibility, legal compliance, plagiarism, or winners, and is not endorsed by Devpost.
 
 ## Provenance
 

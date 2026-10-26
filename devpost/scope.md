@@ -19,3 +19,6 @@ Nothing in the requested feature list is silently cut. OCR, automatic external p
 Independent BriefCheck branding, editorial light interface, dark ink, teal actions, legible evidence, no readiness score or Devpost endorsement.
 ## Proof of success
 New pasted text produces grounded findings; 179/180/181-second tests expose a boundary; a local edit creates a version and changes only relevant outcomes; exports retain the audit trail.
+
+## Current release update
+The user explicitly limited the current release to English. Multilingual experiments are archived research; multiple-language release support is deferred by user instruction. The user also delegated hands-on verification to the agent; automated and browser evidence is recorded without claiming personal learner testing.

@@ -430,3 +430,18 @@ test("AI boundary repairs at most once and never emits invalid evidence", async 
 test('persistent workspace rejects tampered source hashes and evidence',async()=>{
  const {validateWorkspace}=await import('../server/storage.mjs');const r=await run('Demo video must be at most 3 minutes.','Demo video must be under 3 minutes.');const workspace={title:'Test',documents:r.versions,runs:[r],revisions:[]};assert.doesNotThrow(()=>validateWorkspace(workspace));const forged=structuredClone(workspace);forged.runs[0].versions[0].text='Changed';assert.throws(()=>validateWorkspace(forged),/hash/);const bad=structuredClone(workspace);bad.runs[0].findings[0].evidence[0].quote='Invented';assert.throws(()=>validateWorkspace(bad),/evidence/);
 });
+
+test('independent-review regressions: optional and negated deliverables abstain visibly',async()=>{
+ for(const [a,b] of [['A demo video is not required.','A demo video is required.'],['You may optionally include a slide deck.','A slide deck is required.'],['You must not submit a demo video.','You must submit a demo video.']]){const r=await run(a,b);assert.equal(r.status,'partial');assert.ok(r.errors.some(e=>e.topic==='deliverables'));assert.ok(!r.requirements.some(q=>q.status==='supported'&&q.evidence.quote.includes('not')));}
+ const scoped=await run('Pitch videos must be at most 2 minutes.','Demo videos must be at least 3 minutes.');assert.equal(scoped.findings.length,0);assert.equal(scoped.status,'partial');
+});
+
+test('server maps unique multilingual quotes and rejects ambiguous or invented ones',()=>{
+ const quote='डेमो वीडियो की अवधि अधिकतम 3 मिनट होनी चाहिए।';const raw={documentId:'a',topic:'duration',scope:'general',modality:'recommended',predicate:{op:'lte',field:'duration',value:180,values:null},items:[],status:'supported',assumptions:[],conditions:[],exceptions:[],quote,start:null,end:null};
+ const verified=validateModelOutput({requirements:[raw],warnings:[]},[snapshot(doc('a','शीर्षक\n'+quote))]);assert.equal(verified.errors.length,0);assert.equal(verified.requirements[0].evidence.start,7);assert.equal(verified.requirements[0].evidence.quote,quote);
+ const ambiguous=validateModelOutput({requirements:[raw],warnings:[]},[snapshot(doc('a',quote+'\n'+quote))]);assert.equal(ambiguous.requirements.length,0);assert.ok(ambiguous.errors.length);
+});
+
+test('manual interpretation changes require decision reconfirmation',async()=>{
+ const {carryReviewState}=await import('../src/review-state.mjs');const before=await run('Demo video must be at most 3 minutes.','Demo video must be under 3 minutes.');before.decisions[before.findings[0].id]={status:'accepted'};const after=structuredClone(before);after.requirements[0].modality='recommended';carryReviewState(before,after);assert.equal(after.decisions[before.findings[0].id].needsReview,true);
+});

@@ -1,0 +1,3715 @@
+{
+  "provenance": "Independent AI-agent review, not independent human validation. Cases authored from PRD and ledger before reading engine or prior evaluation cases.",
+  "createdAt": "2026-10-26T04:56:35.733Z",
+  "engineSha256": "f393cb15752fd40ac3f7c43ddc5d33070c6d74ae235815cd839ca6e958cd4f19",
+  "casesSha256": "7952846ba17a0e402f289b07152744e8911008d902d06001fb2810e86d7fd97d",
+  "results": [
+    {
+      "id": "same-bound-different-unit",
+      "expect": "No conflict; equivalent boundaries.",
+      "review": {
+        "id": "790e7c8c-e6b5-4161-8194-59eca95a3066",
+        "createdAt": "2026-10-26T04:56:35.731Z",
+        "status": "ready",
+        "mode": "deterministic",
+        "engineVersion": "briefcheck-1.1",
+        "versions": [
+          {
+            "id": "doc-0",
+            "title": "Synthetic source 1",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-0-bb6975a3813cf47e-yzdnzt",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.722Z",
+            "text": "Demo videos must be at most 2 minutes.",
+            "normalized": {
+              "text": "Demo videos must be at most 2 minutes.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38
+              ]
+            },
+            "contentHash": "bb6975a3813cf47e637b74dd65fe9f8edfa07c1c11a83ad085b422a06b2a0a66"
+          },
+          {
+            "id": "doc-1",
+            "title": "Synthetic source 2",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-1-cee1a80f147c8ada-1oue832",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.729Z",
+            "text": "Demo videos must be at most 120 seconds.",
+            "normalized": {
+              "text": "Demo videos must be at most 120 seconds.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40
+              ]
+            },
+            "contentHash": "cee1a80f147c8adac971cbb8083c1c0080bc3c77c8d10ad7832b2bf68934bdc1"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "10znufw",
+            "documentId": "doc-0",
+            "topic": "duration",
+            "scope": "general",
+            "modality": "required",
+            "predicate": {
+              "op": "lte",
+              "value": 120,
+              "field": "duration"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-0-bb6975a3813cf47e-yzdnzt",
+              "start": 0,
+              "end": 38,
+              "quote": "Demo videos must be at most 2 minutes.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          },
+          {
+            "id": "cdze4e",
+            "documentId": "doc-1",
+            "topic": "duration",
+            "scope": "general",
+            "modality": "required",
+            "predicate": {
+              "op": "lte",
+              "value": 120,
+              "field": "duration"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-1-cee1a80f147c8ada-1oue832",
+              "start": 0,
+              "end": 40,
+              "quote": "Demo videos must be at most 120 seconds.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          }
+        ],
+        "findings": [],
+        "errors": [],
+        "coverage": [
+          {
+            "documentId": "doc-0",
+            "title": "Synthetic source 1",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          },
+          {
+            "documentId": "doc-1",
+            "title": "Synthetic source 2",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Only supplied documents were inspected; no eligibility or legal verdict.",
+          "Source verification confirms the quote, not the interpretation.",
+          "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+        ],
+        "scenarios": [],
+        "decisions": {},
+        "model": null,
+        "promptVersion": null,
+        "usage": null,
+        "timingMs": 10
+      }
+    },
+    {
+      "id": "disjoint-team-bounds",
+      "expect": "Detect incompatible mandatory team bounds.",
+      "review": {
+        "id": "e3eb7cc8-4cf2-4a46-b59d-589dd75bf0ea",
+        "createdAt": "2026-10-26T04:56:35.732Z",
+        "status": "ready",
+        "mode": "deterministic",
+        "engineVersion": "briefcheck-1.1",
+        "versions": [
+          {
+            "id": "doc-0",
+            "title": "Synthetic source 1",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-0-2bbc6ae0004b6c91-yzdnzt",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.731Z",
+            "text": "Teams must have at least 5 members.",
+            "normalized": {
+              "text": "Teams must have at least 5 members.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35
+              ]
+            },
+            "contentHash": "2bbc6ae0004b6c91719fb5b2bec54522bd9dd3c88b2aad3003836235cf93e739"
+          },
+          {
+            "id": "doc-1",
+            "title": "Synthetic source 2",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-1-282650da0a627c43-1oue832",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.731Z",
+            "text": "Teams must have at most 4 members.",
+            "normalized": {
+              "text": "Teams must have at most 4 members.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34
+              ]
+            },
+            "contentHash": "282650da0a627c4395f82d84141da9a65a7fbd122049ef6c5fd6436398038bbd"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "m75mcl",
+            "documentId": "doc-0",
+            "topic": "team size",
+            "scope": "general",
+            "modality": "required",
+            "predicate": {
+              "op": "gte",
+              "value": 5,
+              "field": "team size"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-0-2bbc6ae0004b6c91-yzdnzt",
+              "start": 0,
+              "end": 35,
+              "quote": "Teams must have at least 5 members.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          },
+          {
+            "id": "1cw8kul",
+            "documentId": "doc-1",
+            "topic": "team size",
+            "scope": "general",
+            "modality": "required",
+            "predicate": {
+              "op": "lte",
+              "value": 4,
+              "field": "team size"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-1-282650da0a627c43-1oue832",
+              "start": 0,
+              "end": 34,
+              "quote": "Teams must have at most 4 members.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          }
+        ],
+        "findings": [
+          {
+            "id": "entkd",
+            "type": "contradiction",
+            "topic": "team size",
+            "scope": "general",
+            "priority": "High",
+            "reason": "These explicit requirements cannot both hold for the tested scope.",
+            "requirementIds": [
+              "m75mcl",
+              "1cw8kul"
+            ],
+            "evidence": [
+              {
+                "versionId": "doc-0-2bbc6ae0004b6c91-yzdnzt",
+                "start": 0,
+                "end": 35,
+                "quote": "Teams must have at least 5 members.",
+                "validation": "verified"
+              },
+              {
+                "versionId": "doc-1-282650da0a627c43-1oue832",
+                "start": 0,
+                "end": 34,
+                "quote": "Teams must have at most 4 members.",
+                "validation": "verified"
+              }
+            ],
+            "status": "open",
+            "witness": 3
+          }
+        ],
+        "errors": [],
+        "coverage": [
+          {
+            "documentId": "doc-0",
+            "title": "Synthetic source 1",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          },
+          {
+            "documentId": "doc-1",
+            "title": "Synthetic source 2",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Only supplied documents were inspected; no eligibility or legal verdict.",
+          "Source verification confirms the quote, not the interpretation.",
+          "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+        ],
+        "scenarios": [],
+        "decisions": {},
+        "model": null,
+        "promptVersion": null,
+        "usage": null,
+        "timingMs": 0
+      }
+    },
+    {
+      "id": "recommendation-vs-rule",
+      "expect": "Recommendation divergence must not be mandatory contradiction.",
+      "review": {
+        "id": "fc83970c-d081-47ce-9f37-52fdbf455571",
+        "createdAt": "2026-10-26T04:56:35.732Z",
+        "status": "ready",
+        "mode": "deterministic",
+        "engineVersion": "briefcheck-1.1",
+        "versions": [
+          {
+            "id": "doc-0",
+            "title": "Synthetic source 1",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-0-3458a3ce8c801db8-yzdnzt",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.732Z",
+            "text": "Demo videos should be at most 2 minutes.",
+            "normalized": {
+              "text": "Demo videos should be at most 2 minutes.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40
+              ]
+            },
+            "contentHash": "3458a3ce8c801db8c68c53e28e40e212936c200ead3d6fbdc1fea29a5014caf0"
+          },
+          {
+            "id": "doc-1",
+            "title": "Synthetic source 2",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-1-7f3527d79a361fc0-1oue832",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.732Z",
+            "text": "Demo videos must be exactly 3 minutes.",
+            "normalized": {
+              "text": "Demo videos must be exactly 3 minutes.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38
+              ]
+            },
+            "contentHash": "7f3527d79a361fc05a2e25bb93adfecc2f846b444773ca234ba5b897e40b5523"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "1a23sry",
+            "documentId": "doc-0",
+            "topic": "duration",
+            "scope": "general",
+            "modality": "recommended",
+            "predicate": {
+              "op": "lte",
+              "value": 120,
+              "field": "duration"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-0-3458a3ce8c801db8-yzdnzt",
+              "start": 0,
+              "end": 40,
+              "quote": "Demo videos should be at most 2 minutes.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          },
+          {
+            "id": "8i5ec6",
+            "documentId": "doc-1",
+            "topic": "duration",
+            "scope": "general",
+            "modality": "required",
+            "predicate": {
+              "op": "eq",
+              "value": 180,
+              "field": "duration"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-1-7f3527d79a361fc0-1oue832",
+              "start": 0,
+              "end": 38,
+              "quote": "Demo videos must be exactly 3 minutes.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          }
+        ],
+        "findings": [
+          {
+            "id": "uf9gyx",
+            "type": "ambiguity",
+            "topic": "duration",
+            "scope": "general",
+            "priority": "Review",
+            "reason": "The passages give different guidance at a duration boundary. One passage is advisory; this is not a disqualification verdict.",
+            "requirementIds": [
+              "1a23sry",
+              "8i5ec6"
+            ],
+            "evidence": [
+              {
+                "versionId": "doc-0-3458a3ce8c801db8-yzdnzt",
+                "start": 0,
+                "end": 40,
+                "quote": "Demo videos should be at most 2 minutes.",
+                "validation": "verified"
+              },
+              {
+                "versionId": "doc-1-7f3527d79a361fc0-1oue832",
+                "start": 0,
+                "end": 38,
+                "quote": "Demo videos must be exactly 3 minutes.",
+                "validation": "verified"
+              }
+            ],
+            "status": "open",
+            "witness": 119
+          }
+        ],
+        "errors": [],
+        "coverage": [
+          {
+            "documentId": "doc-0",
+            "title": "Synthetic source 1",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          },
+          {
+            "documentId": "doc-1",
+            "title": "Synthetic source 2",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Only supplied documents were inspected; no eligibility or legal verdict.",
+          "Source verification confirms the quote, not the interpretation.",
+          "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+        ],
+        "scenarios": [],
+        "decisions": {},
+        "model": null,
+        "promptVersion": null,
+        "usage": null,
+        "timingMs": 0
+      }
+    },
+    {
+      "id": "different-artifacts",
+      "expect": "Different artifact subjects must not be declared contradictory.",
+      "review": {
+        "id": "4396bd83-905a-4533-8c02-41418d63bc98",
+        "createdAt": "2026-10-26T04:56:35.732Z",
+        "status": "partial",
+        "mode": "deterministic",
+        "engineVersion": "briefcheck-1.1",
+        "versions": [
+          {
+            "id": "doc-0",
+            "title": "Synthetic source 1",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-0-cccf53d506c73fa1-yzdnzt",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.732Z",
+            "text": "Pitch videos must be at most 2 minutes.",
+            "normalized": {
+              "text": "Pitch videos must be at most 2 minutes.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39
+              ]
+            },
+            "contentHash": "cccf53d506c73fa1735c5c8468af11dbefee61d0cece9b418882ca8160438283"
+          },
+          {
+            "id": "doc-1",
+            "title": "Synthetic source 2",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-1-1e932a29363d73ac-1oue832",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.732Z",
+            "text": "Demo videos must be at least 3 minutes.",
+            "normalized": {
+              "text": "Demo videos must be at least 3 minutes.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39
+              ]
+            },
+            "contentHash": "1e932a29363d73ac211b613111fc60c14d9d9cb63f3f49797087aba7723ea860"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "1phwp5j",
+            "documentId": "doc-0",
+            "topic": "duration",
+            "scope": "general",
+            "modality": "required",
+            "predicate": null,
+            "items": [],
+            "status": "unresolved",
+            "assumptions": [
+              "The local parser cannot safely interpret this wording, condition, or time zone. Correct the extraction or use AI-assisted review."
+            ],
+            "evidence": {
+              "versionId": "doc-0-cccf53d506c73fa1-yzdnzt",
+              "start": 0,
+              "end": 39,
+              "quote": "Pitch videos must be at most 2 minutes.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          },
+          {
+            "id": "ar3pb0",
+            "documentId": "doc-1",
+            "topic": "duration",
+            "scope": "general",
+            "modality": "required",
+            "predicate": {
+              "op": "gte",
+              "value": 180,
+              "field": "duration"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-1-1e932a29363d73ac-1oue832",
+              "start": 0,
+              "end": 39,
+              "quote": "Demo videos must be at least 3 minutes.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          }
+        ],
+        "findings": [],
+        "errors": [
+          {
+            "documentId": "doc-0",
+            "topic": "duration",
+            "message": "Needs interpretation: Pitch videos must be at most 2 minutes.",
+            "evidence": {
+              "versionId": "doc-0-cccf53d506c73fa1-yzdnzt",
+              "start": 0,
+              "end": 39,
+              "quote": "Pitch videos must be at most 2 minutes.",
+              "validation": "verified"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "documentId": "doc-0",
+            "title": "Synthetic source 1",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 1
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          },
+          {
+            "documentId": "doc-1",
+            "title": "Synthetic source 2",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Only supplied documents were inspected; no eligibility or legal verdict.",
+          "Source verification confirms the quote, not the interpretation.",
+          "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+        ],
+        "scenarios": [],
+        "decisions": {},
+        "model": null,
+        "promptVersion": null,
+        "usage": null,
+        "timingMs": 0
+      }
+    },
+    {
+      "id": "explicit-exception",
+      "expect": "No contradiction; exception must not become unconditional maximum-four predicate.",
+      "review": {
+        "id": "505385bc-5b4f-409b-a797-239400da9a92",
+        "createdAt": "2026-10-26T04:56:35.732Z",
+        "status": "partial",
+        "mode": "deterministic",
+        "engineVersion": "briefcheck-1.1",
+        "versions": [
+          {
+            "id": "doc-0",
+            "title": "Synthetic source 1",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-0-a245e86bfb44751e-yzdnzt",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.732Z",
+            "text": "Teams must have at most 4 members, except student teams may have 6 members.",
+            "normalized": {
+              "text": "Teams must have at most 4 members, except student teams may have 6 members.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75
+              ]
+            },
+            "contentHash": "a245e86bfb44751e8b6435ba94157d28fb7788594d716f980ba3ed49a4d195e9"
+          },
+          {
+            "id": "doc-1",
+            "title": "Synthetic source 2",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-1-c6c66b44153c7ff3-1oue832",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.732Z",
+            "text": "Student teams may have 6 members.",
+            "normalized": {
+              "text": "Student teams may have 6 members.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33
+              ]
+            },
+            "contentHash": "c6c66b44153c7ff3a85295a5165142647f35a76d113a8e440a02329b983e7c44"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "toiw2e",
+            "documentId": "doc-0",
+            "topic": "team size",
+            "scope": "general",
+            "modality": "required",
+            "predicate": null,
+            "items": [],
+            "status": "unresolved",
+            "assumptions": [
+              "The local parser cannot safely interpret this wording, condition, or time zone. Correct the extraction or use AI-assisted review."
+            ],
+            "evidence": {
+              "versionId": "doc-0-a245e86bfb44751e-yzdnzt",
+              "start": 0,
+              "end": 75,
+              "quote": "Teams must have at most 4 members, except student teams may have 6 members.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          },
+          {
+            "id": "w3nftg",
+            "documentId": "doc-1",
+            "topic": "team size",
+            "scope": "general",
+            "modality": "permitted",
+            "predicate": null,
+            "items": [],
+            "status": "unresolved",
+            "assumptions": [
+              "The local parser cannot safely interpret this wording, condition, or time zone. Correct the extraction or use AI-assisted review."
+            ],
+            "evidence": {
+              "versionId": "doc-1-c6c66b44153c7ff3-1oue832",
+              "start": 0,
+              "end": 33,
+              "quote": "Student teams may have 6 members.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          }
+        ],
+        "findings": [],
+        "errors": [
+          {
+            "documentId": "doc-0",
+            "topic": "team size",
+            "message": "Needs interpretation: Teams must have at most 4 members, except student teams may have 6 members.",
+            "evidence": {
+              "versionId": "doc-0-a245e86bfb44751e-yzdnzt",
+              "start": 0,
+              "end": 75,
+              "quote": "Teams must have at most 4 members, except student teams may have 6 members.",
+              "validation": "verified"
+            }
+          },
+          {
+            "documentId": "doc-1",
+            "topic": "team size",
+            "message": "Needs interpretation: Student teams may have 6 members.",
+            "evidence": {
+              "versionId": "doc-1-c6c66b44153c7ff3-1oue832",
+              "start": 0,
+              "end": 33,
+              "quote": "Student teams may have 6 members.",
+              "validation": "verified"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "documentId": "doc-0",
+            "title": "Synthetic source 1",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 1
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          },
+          {
+            "documentId": "doc-1",
+            "title": "Synthetic source 2",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 1
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Only supplied documents were inspected; no eligibility or legal verdict.",
+          "Source verification confirms the quote, not the interpretation.",
+          "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+        ],
+        "scenarios": [],
+        "decisions": {},
+        "model": null,
+        "promptVersion": null,
+        "usage": null,
+        "timingMs": 0
+      }
+    },
+    {
+      "id": "negated-requirement",
+      "expect": "Detect incompatible required versus not-required deliverable, or explicitly abstain.",
+      "review": {
+        "id": "162120a5-f392-456f-a888-4a3cb4091791",
+        "createdAt": "2026-10-26T04:56:35.732Z",
+        "status": "partial",
+        "mode": "deterministic",
+        "engineVersion": "briefcheck-1.1",
+        "versions": [
+          {
+            "id": "doc-0",
+            "title": "Synthetic source 1",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-0-bef919798dd83547-yzdnzt",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.732Z",
+            "text": "A demo video is not required.",
+            "normalized": {
+              "text": "A demo video is not required.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29
+              ]
+            },
+            "contentHash": "bef919798dd83547d9b77fb6746686a972feda859fa8423d20a27d9de21f792c"
+          },
+          {
+            "id": "doc-1",
+            "title": "Synthetic source 2",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-1-8e184d7fe865e754-1oue832",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.732Z",
+            "text": "A demo video is required.",
+            "normalized": {
+              "text": "A demo video is required.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25
+              ]
+            },
+            "contentHash": "8e184d7fe865e75410803c2448335b8b97ec4c11adac3e03e31607a1c13c69db"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "xb20bt",
+            "documentId": "doc-0",
+            "topic": "deliverables",
+            "scope": "general",
+            "modality": "required",
+            "predicate": null,
+            "items": [],
+            "status": "unresolved",
+            "assumptions": [
+              "This deliverable wording needs organizer or model interpretation; no mandatory requirement was inferred."
+            ],
+            "evidence": {
+              "versionId": "doc-0-bef919798dd83547-yzdnzt",
+              "start": 0,
+              "end": 29,
+              "quote": "A demo video is not required.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          },
+          {
+            "id": "l4fi01",
+            "documentId": "doc-1",
+            "topic": "deliverables",
+            "scope": "general",
+            "modality": "required",
+            "predicate": null,
+            "items": [],
+            "status": "unresolved",
+            "assumptions": [
+              "This deliverable wording needs organizer or model interpretation; no mandatory requirement was inferred."
+            ],
+            "evidence": {
+              "versionId": "doc-1-8e184d7fe865e754-1oue832",
+              "start": 0,
+              "end": 25,
+              "quote": "A demo video is required.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          }
+        ],
+        "findings": [],
+        "errors": [
+          {
+            "documentId": "doc-0",
+            "topic": "deliverables",
+            "message": "Needs deliverable interpretation: A demo video is not required.",
+            "evidence": {
+              "versionId": "doc-0-bef919798dd83547-yzdnzt",
+              "start": 0,
+              "end": 29,
+              "quote": "A demo video is not required.",
+              "validation": "verified"
+            }
+          },
+          {
+            "documentId": "doc-1",
+            "topic": "deliverables",
+            "message": "Needs deliverable interpretation: A demo video is required.",
+            "evidence": {
+              "versionId": "doc-1-8e184d7fe865e754-1oue832",
+              "start": 0,
+              "end": 25,
+              "quote": "A demo video is required.",
+              "validation": "verified"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "documentId": "doc-0",
+            "title": "Synthetic source 1",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 1
+              }
+            ]
+          },
+          {
+            "documentId": "doc-1",
+            "title": "Synthetic source 2",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 1
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Only supplied documents were inspected; no eligibility or legal verdict.",
+          "Source verification confirms the quote, not the interpretation.",
+          "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+        ],
+        "scenarios": [],
+        "decisions": {},
+        "model": null,
+        "promptVersion": null,
+        "usage": null,
+        "timingMs": 0
+      }
+    },
+    {
+      "id": "timezone-equivalence",
+      "expect": "No deadline contradiction; same instant.",
+      "review": {
+        "id": "b4acd9f0-4a4b-4423-9e0e-6a6eaaf9a280",
+        "createdAt": "2026-10-26T04:56:35.733Z",
+        "status": "ready",
+        "mode": "deterministic",
+        "engineVersion": "briefcheck-1.1",
+        "versions": [
+          {
+            "id": "doc-0",
+            "title": "Synthetic source 1",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-0-8d6c4409131dce92-yzdnzt",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.732Z",
+            "text": "Submission deadline: 2026-11-01T18:00:00Z.",
+            "normalized": {
+              "text": "Submission deadline: 2026-11-01T18:00:00Z.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42
+              ]
+            },
+            "contentHash": "8d6c4409131dce925403618363d6f4d7ba55b17f16899d8f41e05c79f4bc1da8"
+          },
+          {
+            "id": "doc-1",
+            "title": "Synthetic source 2",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-1-a530434bb3f51cfe-1oue832",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.732Z",
+            "text": "Submission deadline: 2026-11-01T12:00:00-06:00.",
+            "normalized": {
+              "text": "Submission deadline: 2026-11-01T12:00:00-06:00.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47
+              ]
+            },
+            "contentHash": "a530434bb3f51cfea364c7c7e4828e2bbe1b2465a64fff4b2b8a72f1b2eb48cf"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "1th329e",
+            "documentId": "doc-0",
+            "topic": "deadline",
+            "scope": "general",
+            "modality": "descriptive",
+            "predicate": {
+              "op": "lte",
+              "value": 1793556000000,
+              "field": "deadline"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-0-8d6c4409131dce92-yzdnzt",
+              "start": 0,
+              "end": 42,
+              "quote": "Submission deadline: 2026-11-01T18:00:00Z.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          },
+          {
+            "id": "1i1wuf2",
+            "documentId": "doc-1",
+            "topic": "deadline",
+            "scope": "general",
+            "modality": "descriptive",
+            "predicate": {
+              "op": "lte",
+              "value": 1793556000000,
+              "field": "deadline"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-1-a530434bb3f51cfe-1oue832",
+              "start": 0,
+              "end": 47,
+              "quote": "Submission deadline: 2026-11-01T12:00:00-06:00.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          }
+        ],
+        "findings": [],
+        "errors": [],
+        "coverage": [
+          {
+            "documentId": "doc-0",
+            "title": "Synthetic source 1",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          },
+          {
+            "documentId": "doc-1",
+            "title": "Synthetic source 2",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Only supplied documents were inspected; no eligibility or legal verdict.",
+          "Source verification confirms the quote, not the interpretation.",
+          "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+        ],
+        "scenarios": [],
+        "decisions": {},
+        "model": null,
+        "promptVersion": null,
+        "usage": null,
+        "timingMs": 0
+      }
+    },
+    {
+      "id": "missing-zone",
+      "expect": "Unzoned deadline must remain unresolved, no definitive contradiction or pass.",
+      "review": {
+        "id": "cfffce9d-23c1-4cdd-b1dd-8748f80fe052",
+        "createdAt": "2026-10-26T04:56:35.733Z",
+        "status": "partial",
+        "mode": "deterministic",
+        "engineVersion": "briefcheck-1.1",
+        "versions": [
+          {
+            "id": "doc-0",
+            "title": "Synthetic source 1",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-0-0f691d495e7526c0-yzdnzt",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.733Z",
+            "text": "Submission deadline: November 1, 2026 at 6 PM.",
+            "normalized": {
+              "text": "Submission deadline: November 1, 2026 at 6 PM.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46
+              ]
+            },
+            "contentHash": "0f691d495e7526c099472987bbce37967e73848f4cc69ad75646540ae226e8c1"
+          },
+          {
+            "id": "doc-1",
+            "title": "Synthetic source 2",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-1-8d6c4409131dce92-1oue832",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.733Z",
+            "text": "Submission deadline: 2026-11-01T18:00:00Z.",
+            "normalized": {
+              "text": "Submission deadline: 2026-11-01T18:00:00Z.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42
+              ]
+            },
+            "contentHash": "8d6c4409131dce925403618363d6f4d7ba55b17f16899d8f41e05c79f4bc1da8"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "m5phmd",
+            "documentId": "doc-0",
+            "topic": "deadline",
+            "scope": "general",
+            "modality": "descriptive",
+            "predicate": null,
+            "items": [],
+            "status": "unresolved",
+            "assumptions": [
+              "The local parser cannot safely interpret this wording, condition, or time zone. Correct the extraction or use AI-assisted review."
+            ],
+            "evidence": {
+              "versionId": "doc-0-0f691d495e7526c0-yzdnzt",
+              "start": 0,
+              "end": 46,
+              "quote": "Submission deadline: November 1, 2026 at 6 PM.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          },
+          {
+            "id": "aedijp",
+            "documentId": "doc-1",
+            "topic": "deadline",
+            "scope": "general",
+            "modality": "descriptive",
+            "predicate": {
+              "op": "lte",
+              "value": 1793556000000,
+              "field": "deadline"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-1-8d6c4409131dce92-1oue832",
+              "start": 0,
+              "end": 42,
+              "quote": "Submission deadline: 2026-11-01T18:00:00Z.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          }
+        ],
+        "findings": [],
+        "errors": [
+          {
+            "documentId": "doc-0",
+            "topic": "deadline",
+            "message": "Needs interpretation: Submission deadline: November 1, 2026 at 6 PM.",
+            "evidence": {
+              "versionId": "doc-0-0f691d495e7526c0-yzdnzt",
+              "start": 0,
+              "end": 46,
+              "quote": "Submission deadline: November 1, 2026 at 6 PM.",
+              "validation": "verified"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "documentId": "doc-0",
+            "title": "Synthetic source 1",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 1
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          },
+          {
+            "documentId": "doc-1",
+            "title": "Synthetic source 2",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Only supplied documents were inspected; no eligibility or legal verdict.",
+          "Source verification confirms the quote, not the interpretation.",
+          "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+        ],
+        "scenarios": [],
+        "decisions": {},
+        "model": null,
+        "promptVersion": null,
+        "usage": null,
+        "timingMs": 0
+      }
+    },
+    {
+      "id": "optional-artifact",
+      "expect": "Detect optional versus required inconsistency or abstain; do not extract optional as required.",
+      "review": {
+        "id": "2cee7abf-eb9b-4cf0-a9f6-58e5862ad786",
+        "createdAt": "2026-10-26T04:56:35.733Z",
+        "status": "partial",
+        "mode": "deterministic",
+        "engineVersion": "briefcheck-1.1",
+        "versions": [
+          {
+            "id": "doc-0",
+            "title": "Synthetic source 1",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-0-3fb22566ba507fed-yzdnzt",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.733Z",
+            "text": "You may optionally include a slide deck.",
+            "normalized": {
+              "text": "You may optionally include a slide deck.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40
+              ]
+            },
+            "contentHash": "3fb22566ba507fedd99f3f3cb59634db26d6b71561007f153f155c35dfcfebe0"
+          },
+          {
+            "id": "doc-1",
+            "title": "Synthetic source 2",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-1-80fd43a6dbb55b84-1oue832",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.733Z",
+            "text": "A slide deck is required.",
+            "normalized": {
+              "text": "A slide deck is required.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25
+              ]
+            },
+            "contentHash": "80fd43a6dbb55b84dc9d40c460f8226cdce438b640109599342da42b8fcacac5"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "1mpuv2e",
+            "documentId": "doc-0",
+            "topic": "deliverables",
+            "scope": "general",
+            "modality": "permitted",
+            "predicate": null,
+            "items": [],
+            "status": "unresolved",
+            "assumptions": [
+              "This deliverable wording needs organizer or model interpretation; no mandatory requirement was inferred."
+            ],
+            "evidence": {
+              "versionId": "doc-0-3fb22566ba507fed-yzdnzt",
+              "start": 0,
+              "end": 40,
+              "quote": "You may optionally include a slide deck.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          },
+          {
+            "id": "iisoez",
+            "documentId": "doc-1",
+            "topic": "deliverables",
+            "scope": "general",
+            "modality": "required",
+            "predicate": null,
+            "items": [],
+            "status": "unresolved",
+            "assumptions": [
+              "This deliverable wording needs organizer or model interpretation; no mandatory requirement was inferred."
+            ],
+            "evidence": {
+              "versionId": "doc-1-80fd43a6dbb55b84-1oue832",
+              "start": 0,
+              "end": 25,
+              "quote": "A slide deck is required.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          }
+        ],
+        "findings": [],
+        "errors": [
+          {
+            "documentId": "doc-0",
+            "topic": "deliverables",
+            "message": "Needs deliverable interpretation: You may optionally include a slide deck.",
+            "evidence": {
+              "versionId": "doc-0-3fb22566ba507fed-yzdnzt",
+              "start": 0,
+              "end": 40,
+              "quote": "You may optionally include a slide deck.",
+              "validation": "verified"
+            }
+          },
+          {
+            "documentId": "doc-1",
+            "topic": "deliverables",
+            "message": "Needs deliverable interpretation: A slide deck is required.",
+            "evidence": {
+              "versionId": "doc-1-80fd43a6dbb55b84-1oue832",
+              "start": 0,
+              "end": 25,
+              "quote": "A slide deck is required.",
+              "validation": "verified"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "documentId": "doc-0",
+            "title": "Synthetic source 1",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 1
+              }
+            ]
+          },
+          {
+            "documentId": "doc-1",
+            "title": "Synthetic source 2",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 1
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Only supplied documents were inspected; no eligibility or legal verdict.",
+          "Source verification confirms the quote, not the interpretation.",
+          "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+        ],
+        "scenarios": [],
+        "decisions": {},
+        "model": null,
+        "promptVersion": null,
+        "usage": null,
+        "timingMs": 0
+      }
+    },
+    {
+      "id": "conditional-bound",
+      "expect": "Conditional limit cannot be treated as unconditional; no disjoint contradiction.",
+      "review": {
+        "id": "5649e748-b764-4c4c-8ba6-f26a8fbb49e2",
+        "createdAt": "2026-10-26T04:56:35.733Z",
+        "status": "partial",
+        "mode": "deterministic",
+        "engineVersion": "briefcheck-1.1",
+        "versions": [
+          {
+            "id": "doc-0",
+            "title": "Synthetic source 1",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-0-d0294e6e16abe87c-yzdnzt",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.733Z",
+            "text": "If your demo includes a live performance, the video must be at most 5 minutes.",
+            "normalized": {
+              "text": "If your demo includes a live performance, the video must be at most 5 minutes.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78
+              ]
+            },
+            "contentHash": "d0294e6e16abe87c3f426b2985db0f68bb9b3cedb6fee1052335eeeb6a958890"
+          },
+          {
+            "id": "doc-1",
+            "title": "Synthetic source 2",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-1-c4039def6f3774b1-1oue832",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.733Z",
+            "text": "Demo videos must be at most 3 minutes.",
+            "normalized": {
+              "text": "Demo videos must be at most 3 minutes.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38
+              ]
+            },
+            "contentHash": "c4039def6f3774b19baad99879e2c13fb1cc013a249de353d2591809654857c2"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "1ecxhj",
+            "documentId": "doc-0",
+            "topic": "duration",
+            "scope": "general",
+            "modality": "required",
+            "predicate": null,
+            "items": [],
+            "status": "unresolved",
+            "assumptions": [
+              "The local parser cannot safely interpret this wording, condition, or time zone. Correct the extraction or use AI-assisted review."
+            ],
+            "evidence": {
+              "versionId": "doc-0-d0294e6e16abe87c-yzdnzt",
+              "start": 0,
+              "end": 78,
+              "quote": "If your demo includes a live performance, the video must be at most 5 minutes.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          },
+          {
+            "id": "19stomq",
+            "documentId": "doc-1",
+            "topic": "duration",
+            "scope": "general",
+            "modality": "required",
+            "predicate": {
+              "op": "lte",
+              "value": 180,
+              "field": "duration"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-1-c4039def6f3774b1-1oue832",
+              "start": 0,
+              "end": 38,
+              "quote": "Demo videos must be at most 3 minutes.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          }
+        ],
+        "findings": [],
+        "errors": [
+          {
+            "documentId": "doc-0",
+            "topic": "duration",
+            "message": "Needs interpretation: If your demo includes a live performance, the video must be at most 5 minutes.",
+            "evidence": {
+              "versionId": "doc-0-d0294e6e16abe87c-yzdnzt",
+              "start": 0,
+              "end": 78,
+              "quote": "If your demo includes a live performance, the video must be at most 5 minutes.",
+              "validation": "verified"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "documentId": "doc-0",
+            "title": "Synthetic source 1",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 1
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          },
+          {
+            "documentId": "doc-1",
+            "title": "Synthetic source 2",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Only supplied documents were inspected; no eligibility or legal verdict.",
+          "Source verification confirms the quote, not the interpretation.",
+          "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+        ],
+        "scenarios": [],
+        "decisions": {},
+        "model": null,
+        "promptVersion": null,
+        "usage": null,
+        "timingMs": 0
+      }
+    },
+    {
+      "id": "range-and-exact",
+      "expect": "Detect disjoint team sizes or explicitly mark unsupported range unresolved.",
+      "review": {
+        "id": "1b5b9750-930c-4a55-8822-510d1ef0e7f2",
+        "createdAt": "2026-10-26T04:56:35.733Z",
+        "status": "partial",
+        "mode": "deterministic",
+        "engineVersion": "briefcheck-1.1",
+        "versions": [
+          {
+            "id": "doc-0",
+            "title": "Synthetic source 1",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-0-65ed5ab2659cf832-yzdnzt",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.733Z",
+            "text": "Teams must have between 2 and 4 members.",
+            "normalized": {
+              "text": "Teams must have between 2 and 4 members.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40
+              ]
+            },
+            "contentHash": "65ed5ab2659cf832e086cba73f598f234bbe67cd43b7af1f71656ca58f3010f4"
+          },
+          {
+            "id": "doc-1",
+            "title": "Synthetic source 2",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-1-0d80eada38630ca8-1oue832",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.733Z",
+            "text": "Teams must have exactly 5 members.",
+            "normalized": {
+              "text": "Teams must have exactly 5 members.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34
+              ]
+            },
+            "contentHash": "0d80eada38630ca863505494eeeda35fab22a6eceadea20f71e4a9815fef6a1b"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "1d36775",
+            "documentId": "doc-0",
+            "topic": "team size",
+            "scope": "general",
+            "modality": "required",
+            "predicate": null,
+            "items": [],
+            "status": "unresolved",
+            "assumptions": [
+              "The local parser cannot safely interpret this wording, condition, or time zone. Correct the extraction or use AI-assisted review."
+            ],
+            "evidence": {
+              "versionId": "doc-0-65ed5ab2659cf832-yzdnzt",
+              "start": 0,
+              "end": 40,
+              "quote": "Teams must have between 2 and 4 members.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          },
+          {
+            "id": "1wt3bts",
+            "documentId": "doc-1",
+            "topic": "team size",
+            "scope": "general",
+            "modality": "required",
+            "predicate": {
+              "op": "eq",
+              "value": 5,
+              "field": "team size"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-1-0d80eada38630ca8-1oue832",
+              "start": 0,
+              "end": 34,
+              "quote": "Teams must have exactly 5 members.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          }
+        ],
+        "findings": [],
+        "errors": [
+          {
+            "documentId": "doc-0",
+            "topic": "team size",
+            "message": "Needs interpretation: Teams must have between 2 and 4 members.",
+            "evidence": {
+              "versionId": "doc-0-65ed5ab2659cf832-yzdnzt",
+              "start": 0,
+              "end": 40,
+              "quote": "Teams must have between 2 and 4 members.",
+              "validation": "verified"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "documentId": "doc-0",
+            "title": "Synthetic source 1",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 1
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          },
+          {
+            "documentId": "doc-1",
+            "title": "Synthetic source 2",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Only supplied documents were inspected; no eligibility or legal verdict.",
+          "Source verification confirms the quote, not the interpretation.",
+          "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+        ],
+        "scenarios": [],
+        "decisions": {},
+        "model": null,
+        "promptVersion": null,
+        "usage": null,
+        "timingMs": 0
+      }
+    },
+    {
+      "id": "revision-removes-evidence",
+      "expect": "Initial contradiction must not become resolved when replacement removes interpretable evidence.",
+      "review": {
+        "id": "eea72f4f-8f6a-4bd2-b4ee-61d00f7a4e72",
+        "createdAt": "2026-10-26T04:56:35.733Z",
+        "status": "ready",
+        "mode": "deterministic",
+        "engineVersion": "briefcheck-1.1",
+        "versions": [
+          {
+            "id": "doc-0",
+            "title": "Synthetic source 1",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-0-bb6975a3813cf47e-yzdnzt",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.733Z",
+            "text": "Demo videos must be at most 2 minutes.",
+            "normalized": {
+              "text": "Demo videos must be at most 2 minutes.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38
+              ]
+            },
+            "contentHash": "bb6975a3813cf47e637b74dd65fe9f8edfa07c1c11a83ad085b422a06b2a0a66"
+          },
+          {
+            "id": "doc-1",
+            "title": "Synthetic source 2",
+            "role": "official rules",
+            "coverage": {
+              "criteria": false,
+              "deliverables": false
+            },
+            "url": "",
+            "inputMethod": "synthetic",
+            "provenance": null,
+            "versionId": "doc-1-1e932a29363d73ac-1oue832",
+            "parentVersionId": null,
+            "capturedAt": "2026-10-26T04:56:35.733Z",
+            "text": "Demo videos must be at least 3 minutes.",
+            "normalized": {
+              "text": "Demo videos must be at least 3 minutes.",
+              "offsets": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39
+              ]
+            },
+            "contentHash": "1e932a29363d73ac211b613111fc60c14d9d9cb63f3f49797087aba7723ea860"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "10znufw",
+            "documentId": "doc-0",
+            "topic": "duration",
+            "scope": "general",
+            "modality": "required",
+            "predicate": {
+              "op": "lte",
+              "value": 120,
+              "field": "duration"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-0-bb6975a3813cf47e-yzdnzt",
+              "start": 0,
+              "end": 38,
+              "quote": "Demo videos must be at most 2 minutes.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          },
+          {
+            "id": "ar3pb0",
+            "documentId": "doc-1",
+            "topic": "duration",
+            "scope": "general",
+            "modality": "required",
+            "predicate": {
+              "op": "gte",
+              "value": 180,
+              "field": "duration"
+            },
+            "items": [],
+            "status": "supported",
+            "assumptions": [
+              "Only this passage and the explicitly selected track are tested."
+            ],
+            "evidence": {
+              "versionId": "doc-1-1e932a29363d73ac-1oue832",
+              "start": 0,
+              "end": 39,
+              "quote": "Demo videos must be at least 3 minutes.",
+              "validation": "verified"
+            },
+            "conditions": [],
+            "exceptions": []
+          }
+        ],
+        "findings": [
+          {
+            "id": "7pnn1x",
+            "type": "contradiction",
+            "topic": "duration",
+            "scope": "general",
+            "priority": "High",
+            "reason": "These explicit requirements cannot both hold for the tested scope.",
+            "requirementIds": [
+              "10znufw",
+              "ar3pb0"
+            ],
+            "evidence": [
+              {
+                "versionId": "doc-0-bb6975a3813cf47e-yzdnzt",
+                "start": 0,
+                "end": 38,
+                "quote": "Demo videos must be at most 2 minutes.",
+                "validation": "verified"
+              },
+              {
+                "versionId": "doc-1-1e932a29363d73ac-1oue832",
+                "start": 0,
+                "end": 39,
+                "quote": "Demo videos must be at least 3 minutes.",
+                "validation": "verified"
+              }
+            ],
+            "status": "open",
+            "witness": 119
+          }
+        ],
+        "errors": [],
+        "coverage": [
+          {
+            "documentId": "doc-0",
+            "title": "Synthetic source 1",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          },
+          {
+            "documentId": "doc-1",
+            "title": "Synthetic source 2",
+            "topics": [
+              {
+                "topic": "duration",
+                "extracted": 1,
+                "unresolved": 0
+              },
+              {
+                "topic": "team size",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deadline",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "criteria",
+                "extracted": 0,
+                "unresolved": 0
+              },
+              {
+                "topic": "deliverables",
+                "extracted": 0,
+                "unresolved": 0
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          "Only supplied documents were inspected; no eligibility or legal verdict.",
+          "Source verification confirms the quote, not the interpretation.",
+          "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+        ],
+        "scenarios": [],
+        "decisions": {},
+        "model": null,
+        "promptVersion": null,
+        "usage": null,
+        "timingMs": 0
+      },
+      "revision": {
+        "review": {
+          "id": "583317ab-0a09-4ea5-b9c8-101b72d1a595",
+          "createdAt": "2026-10-26T04:56:35.733Z",
+          "status": "ready",
+          "mode": "deterministic",
+          "engineVersion": "briefcheck-1.1",
+          "versions": [
+            {
+              "id": "doc-0",
+              "title": "Synthetic source 1",
+              "role": "official rules",
+              "coverage": {
+                "criteria": false,
+                "deliverables": false
+              },
+              "url": "",
+              "inputMethod": "synthetic",
+              "provenance": null,
+              "versionId": "doc-0-bb6975a3813cf47e-yzdnzt",
+              "parentVersionId": null,
+              "capturedAt": "2026-10-26T04:56:35.733Z",
+              "text": "Demo videos must be at most 2 minutes.",
+              "normalized": {
+                "text": "Demo videos must be at most 2 minutes.",
+                "offsets": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38
+                ]
+              },
+              "contentHash": "bb6975a3813cf47e637b74dd65fe9f8edfa07c1c11a83ad085b422a06b2a0a66"
+            },
+            {
+              "id": "doc-1",
+              "title": "Synthetic source 2",
+              "role": "official rules",
+              "coverage": {
+                "criteria": false,
+                "deliverables": false
+              },
+              "url": "",
+              "inputMethod": "synthetic",
+              "provenance": null,
+              "versionId": "doc-1-0124a42a2d2f0005-1oue832",
+              "parentVersionId": null,
+              "capturedAt": "2026-10-26T04:56:35.733Z",
+              "text": "Video length will be announced later.",
+              "normalized": {
+                "text": "Video length will be announced later.",
+                "offsets": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37
+                ]
+              },
+              "contentHash": "0124a42a2d2f00054691bf65cbabeb033a564e786b67b8c4b6a99b86c1a1fc10"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "10znufw",
+              "documentId": "doc-0",
+              "topic": "duration",
+              "scope": "general",
+              "modality": "required",
+              "predicate": {
+                "op": "lte",
+                "value": 120,
+                "field": "duration"
+              },
+              "items": [],
+              "status": "supported",
+              "assumptions": [
+                "Only this passage and the explicitly selected track are tested."
+              ],
+              "evidence": {
+                "versionId": "doc-0-bb6975a3813cf47e-yzdnzt",
+                "start": 0,
+                "end": 38,
+                "quote": "Demo videos must be at most 2 minutes.",
+                "validation": "verified"
+              },
+              "conditions": [],
+              "exceptions": []
+            }
+          ],
+          "findings": [],
+          "errors": [],
+          "coverage": [
+            {
+              "documentId": "doc-0",
+              "title": "Synthetic source 1",
+              "topics": [
+                {
+                  "topic": "duration",
+                  "extracted": 1,
+                  "unresolved": 0
+                },
+                {
+                  "topic": "team size",
+                  "extracted": 0,
+                  "unresolved": 0
+                },
+                {
+                  "topic": "deadline",
+                  "extracted": 0,
+                  "unresolved": 0
+                },
+                {
+                  "topic": "criteria",
+                  "extracted": 0,
+                  "unresolved": 0
+                },
+                {
+                  "topic": "deliverables",
+                  "extracted": 0,
+                  "unresolved": 0
+                }
+              ]
+            },
+            {
+              "documentId": "doc-1",
+              "title": "Synthetic source 2",
+              "topics": [
+                {
+                  "topic": "duration",
+                  "extracted": 0,
+                  "unresolved": 0
+                },
+                {
+                  "topic": "team size",
+                  "extracted": 0,
+                  "unresolved": 0
+                },
+                {
+                  "topic": "deadline",
+                  "extracted": 0,
+                  "unresolved": 0
+                },
+                {
+                  "topic": "criteria",
+                  "extracted": 0,
+                  "unresolved": 0
+                },
+                {
+                  "topic": "deliverables",
+                  "extracted": 0,
+                  "unresolved": 0
+                }
+              ]
+            }
+          ],
+          "limitations": [
+            "Only supplied documents were inspected; no eligibility or legal verdict.",
+            "Source verification confirms the quote, not the interpretation.",
+            "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+          ],
+          "scenarios": [],
+          "decisions": {},
+          "model": null,
+          "promptVersion": null,
+          "usage": null,
+          "timingMs": 0
+        },
+        "changes": [
+          {
+            "finding": {
+              "id": "7pnn1x",
+              "type": "contradiction",
+              "topic": "duration",
+              "scope": "general",
+              "priority": "High",
+              "reason": "These explicit requirements cannot both hold for the tested scope.",
+              "requirementIds": [
+                "10znufw",
+                "ar3pb0"
+              ],
+              "evidence": [
+                {
+                  "versionId": "doc-0-bb6975a3813cf47e-yzdnzt",
+                  "start": 0,
+                  "end": 38,
+                  "quote": "Demo videos must be at most 2 minutes.",
+                  "validation": "verified"
+                },
+                {
+                  "versionId": "doc-1-1e932a29363d73ac-1oue832",
+                  "start": 0,
+                  "end": 39,
+                  "quote": "Demo videos must be at least 3 minutes.",
+                  "validation": "verified"
+                }
+              ],
+              "status": "open",
+              "witness": 119
+            },
+            "state": "unresolved",
+            "needsDecisionReview": true
+          }
+        ]
+      }
+    }
+  ]
+}

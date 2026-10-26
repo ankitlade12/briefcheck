@@ -277,6 +277,7 @@ export default function App() {
       predicates: related.map((r: Data) => ({
         id: r.id,
         predicate: r.predicate,
+                                            items: r.items,
         versionId: r.evidence.versionId,
       })),
       outcomes: related.map((r: Data) => ({
@@ -306,8 +307,11 @@ export default function App() {
         at: new Date().toISOString(),
         reviewer: config.user?.name || "Session organizer",
       };
-      if (saved) {
+      const storedRun = saved && JSON.parse(savedFingerprint || '{}').runs?.some((r:Data) => r.id === run.id);
+      if(saved && !storedRun && saved.role === 'reviewer') throw new Error('An editor must save this new review before you can record a shared decision.');
+      if (storedRun) {
         const result = await api(`/workspaces/${saved.id}/decisions`, {
+          revision: saved.revision,
           runId: run.id,
           findingId: finding.id,
           status,
@@ -323,7 +327,7 @@ export default function App() {
             : r,
         ),
       );
-      setMessage("Decision recorded with its source version.");
+      setMessage(saved && !storedRun ? "Decision recorded locally. Save the workspace to share this new review and decision." : "Decision recorded with its source version.");
     });
   }
   function openEdit(d: Data) {
@@ -625,7 +629,7 @@ export default function App() {
               </h1>
               <p>
                 {tab === "materials"
-                  ? "Bring your event instructions together. Find the gaps before your participants do."
+                  ? "Bring your English event instructions together. Find the gaps before your participants do."
                   : tab === "review"
                     ? "Follow the evidence, test an example, and make an informed correction."
                     : tab === "coverage"
@@ -909,7 +913,7 @@ export default function App() {
                         Deterministic · explicit English patterns
                       </option>
                       <option value="ai" disabled={!config.aiEnabled}>
-                        AI-assisted · multilingual & conditions
+                        AI-assisted · English & conditions
                         {!config.aiEnabled ? " (server setup needed)" : ""}
                       </option>
                     </select>
@@ -1279,6 +1283,7 @@ export default function App() {
                                         conditions: r.conditions,
                                         exceptions: r.exceptions,
                                         predicate: r.predicate,
+                                            items: r.items,
                                       },
                                       null,
                                       2,
@@ -1294,6 +1299,7 @@ export default function App() {
                                             scope: r.scope,
                                             modality: r.modality,
                                             predicate: r.predicate,
+                                            items: r.items,
                                           },
                                           null,
                                           2,
@@ -1467,7 +1473,7 @@ export default function App() {
                   </div>
                   <h3>Source-to-requirement map</h3>
                   <DependencyMap review={current} />
-                  <h3>Recorded synthetic evaluation</h3>
+                  <h3>Historical synthetic evaluation · engine 1.0</h3>
                   <p className="muted">
                     {evaluation.counts.cases} held-out cases ·{" "}
                     {evaluation.counts.truePositive} detected issues ·{" "}
@@ -1501,7 +1507,7 @@ export default function App() {
                         {JSON.stringify(
                           {
                             predicate: r.predicate,
-                            items: r.items,
+                                            items: r.items,
                             conditions: r.conditions,
                             exceptions: r.exceptions,
                             assumptions: r.assumptions,
@@ -1540,6 +1546,7 @@ export default function App() {
                                 scope: r.scope,
                                 modality: r.modality,
                                 predicate: r.predicate,
+                                            items: r.items,
                               },
                               null,
                               2,
@@ -2048,8 +2055,8 @@ export default function App() {
               <section className="panel">
                 <h2>Authorized workspace integration</h2>
                 <p>
-                  Send a review report to an operator-configured HTTPS webhook.
-                  Destination credentials stay on the server.
+                  Send a review report to the operator-configured destination.
+                  GitHub exports are public. Destination credentials stay on the server.
                 </p>
                 {config.integrations.length ? (
                   <>
@@ -2287,7 +2294,7 @@ export default function App() {
             <>
               <blockquote>{modal.requirement.evidence.quote}</blockquote>
               <p>
-                Correct the normalized scope, modality, or restricted predicate.
+                Correct the normalized scope, modality, item set, or restricted predicate.
                 The source quote stays immutable. Unsupported fields are
                 rejected.
               </p>
@@ -2337,6 +2344,7 @@ export default function App() {
                       throw new Error(
                         "A numeric requirement needs a supported predicate.",
                       );
+                    if (!Array.isArray(patch.items) || patch.items.length > 30 || patch.items.some((x:unknown)=>typeof x!=='string'||!x.trim()||x.length>200) || (['criteria','deliverables'].includes(modal.requirement.topic)&&patch.items.length===0)) throw new Error('Provide the explicit nonempty item set for criteria or deliverables; use an array of short strings.');
                     const reqs = current.requirements.map((r: Data) =>
                       r.id === modal.requirement.id
                         ? {
@@ -2344,6 +2352,7 @@ export default function App() {
                             scope: patch.scope,
                             modality: patch.modality,
                             predicate: patch.predicate,
+                            items: patch.items,
                             status: "supported",
                             correction: {
                               reason,
@@ -2463,6 +2472,7 @@ export default function App() {
                                     {
                                       id: r.id,
                                       predicate: r.predicate,
+                                            items: r.items,
                                       versionId: r.evidence.versionId,
                                     },
                                   ],
@@ -2541,7 +2551,7 @@ export default function App() {
               </p>
               <p>
                 Deterministic mode supports explicit English patterns. AI mode
-                adds model extraction, including multilingual text and supported
+                adds model extraction, for English text and supported
                 conditions, when a provider is configured. Neither mode
                 certifies eligibility or legal compliance.
               </p>

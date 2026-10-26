@@ -38,3 +38,11 @@ The comparison engine was frozen at SHA-256 `b31430496d16631388c8400da1b992893dd
 - Public deployment, public Git repository upload, actual demo recording/upload, Devpost registration/submission, or the user's final hands-on acceptance.
 
 Failures found during verification were repaired before recording a pass: low text contrast; stale scenario predicates after a rerun; missing saved-workspace evidence validation. Test-harness issues included browser-context setup for axe, public-page title/body expectations and native-select keyboard automation; these are not represented as passing tests before correction.
+
+## Shipping verification update
+
+The previously missing API key is now locally configured. Live provider testing exposed scope and timeout problems, then Hindi offset-counting failures. These failed runs are preserved. The repair uses strict canonical scope, low reasoning for the configured mini model, and server-side unique verbatim quote matching. Three research smoke cases then passed in roughly 10–12 seconds each; this does not establish general language accuracy. The user subsequently restricted the release to English only.
+
+Independent-agent original audit: 12 cases, 9 passing / 2 failing / 1 inconclusive. Retest: 11 meet original expectations (two via explicit safe abstention), one artifact-coverage case remains inconclusive. Four delayed-write/revocation tests pass. Expanded workflow audit found decision persistence and approval invalidation issues, now repaired and independently retested. See evaluation/independent-agent.* for raw evidence.
+
+The original 20-case held-out result remains a historical engine-1.0 result; it is not relabeled as a fresh blind evaluation of engine 1.1. User delegated personal hands-on testing to the agent. No organizer pilot or independent human validation is claimed.

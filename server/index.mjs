@@ -3,6 +3,7 @@ import { randomBytes } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { resolve, dirname } from "node:path";
 import { readFile } from "node:fs/promises";
+import { integrationDestinations, exportToGitHub } from "./integrations.mjs";
 import { analyze, aiConfiguration } from "./analysis.mjs";
 import { importURL, importPDF, publicRequest } from "./imports.mjs";
 import {
@@ -119,9 +120,7 @@ const server = createServer(async (req, res) => {
         aiEnabled: aiConfiguration().enabled,
         model: aiConfiguration().model,
         user,
-        integrations: process.env.BRIEFCHECK_WEBHOOK_URL
-          ? ["Configured review webhook"]
-          : [],
+        integrations: integrationDestinations(),
       });
     if (path === "/api/auth" && req.method === "POST") {
       rate(req.socket.remoteAddress + ":auth", 10);
@@ -273,8 +272,8 @@ const server = createServer(async (req, res) => {
         return send(res, 200, { ok: true });
       }
       if (req.method === "PUT" && !action) {
-        const a = authorized(req, id, ["owner", "editor"]),
-          b = await json(req);
+        const b = await json(req);
+        const a = authorized(req, id, ["owner", "editor"]);
         if (b.revision !== a.ws.revision)
           throw Object.assign(
             new Error(
@@ -290,8 +289,8 @@ const server = createServer(async (req, res) => {
           throw new Error("Invalid title.");
         validateWorkspace(b);
         db.prepare(
-          "UPDATE workspaces SET title=?,data=?,updated=?,revision=revision+1 WHERE id=?",
-        ).run(b.title, JSON.stringify(b), new Date().toISOString(), id);
+          "UPDATE workspaces SET title=?,data=?,updated=?,revision=revision+1 WHERE id=? AND revision=?",
+        ).run(b.title, JSON.stringify(b), new Date().toISOString(), id, b.revision);
         return send(res, 200, {
           id,
           revision: a.ws.revision + 1,
@@ -299,8 +298,8 @@ const server = createServer(async (req, res) => {
         });
       }
       if (action === "access" && req.method === "POST") {
-        authorized(req, id, ["owner"]);
         const b = await json(req, 5000);
+        authorized(req, id, ["owner"]);
         if (!["editor", "reviewer", "remove"].includes(b.role))
           throw new Error("Choose editor or reviewer.");
         const target = db
@@ -321,9 +320,9 @@ const server = createServer(async (req, res) => {
         return send(res, 200, { ok: true });
       }
       if (action === "decisions" && req.method === "POST") {
-        const a = authorized(req, id),
-          b = await json(req, 10000),
-          data = JSON.parse(a.ws.data);
+        const b = await json(req, 10000);
+        const a = authorized(req, id), data = JSON.parse(a.ws.data);
+        if (b.revision !== undefined && b.revision !== a.ws.revision) throw Object.assign(new Error('The shared workspace changed. Reopen it before recording this decision; your local work is preserved.'),{status:409});
         const run = data.runs?.find((r) => r.id === b.runId);
         if (
           !run?.findings.some((f) => f.id === b.findingId) ||
@@ -380,11 +379,12 @@ const server = createServer(async (req, res) => {
     if (path === "/api/integrations/export" && req.method === "POST") {
       needUser(req);
       rate(user.id + ":webhook", 3);
-      if (!process.env.BRIEFCHECK_WEBHOOK_URL)
+      if (!integrationDestinations().length)
         throw new Error("No integration destination is configured.");
       const b = await json(req);
       if (b.confirm !== true)
         throw new Error("Explicit export confirmation is required.");
+      if(process.env.BRIEFCHECK_GITHUB_REPO) return send(res,200,{ok:true,...await exportToGitHub(b.report,req.socket.remoteAddress)});
       await publicRequest(process.env.BRIEFCHECK_WEBHOOK_URL, {
         method: "POST",
         body: JSON.stringify(b.report),

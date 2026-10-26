@@ -1,0 +1,28 @@
+Independent AI-agent review — not independent human validation
+
+Scope: 12 new synthetic cases authored after reading devpost/prd.md and requirements-status.md but BEFORE reading src/engine.mjs or prior evaluation cases. Existing evaluation cases were not read. No model/provider requests, publication, or implementation changes. This is a bounded adversarial probe, not a representative accuracy benchmark.
+
+Raw evidence: independent-agent.cases.json; independent-agent.results.json; reproduce with node evaluation/independent-agent.run.mjs. Results record SHA-256 hashes for engine and cases.
+
+Case verdicts against original written expectations:
+PASS same-bound-different-unit: 120 seconds and 2 minutes match.
+PASS disjoint-team-bounds: mandatory minimum five and maximum four produce contradiction.
+PASS recommendation-vs-rule: recommendation divergence is ambiguity, not mandatory contradiction.
+INCONCLUSIVE different-artifacts: no false conflict, but Pitch videos sentence was silently omitted; this does not validate subject separation.
+PASS explicit-exception: both exception and unsupported permission abstain.
+FAIL negated-requirement: both required/not-required passages silently omitted; ready review with zero requirements, findings, errors.
+PASS timezone-equivalence: different offsets normalize to same instant.
+PASS missing-zone: unzoned date unresolved.
+FAIL optional-artifact: optional/required slide deck passages silently omitted; ready review with zero requirements, findings, errors.
+PASS conditional-bound: conditional bound unresolved; no unsafe unconditional predicate.
+PASS range-and-exact: range explicitly unresolved.
+PASS revision-removes-evidence: initial contradiction becomes unresolved, not resolved.
+
+Counts: 12 cases; 9 pass, 2 fail, 1 inconclusive. 13 deterministic analysis calls including one reanalysis. 0 observed false contradiction findings, but the distinct-artifact check is inconclusive. 2 missed deliverable inconsistencies. 1 additional silently missed duration passage. 0 unsafe resolved states among 1 tested revision. These counts are separate from the existing 40-case evaluation and must not be merged into its held-out score.
+
+Findings:
+1. Missed required/not-required and optional/required deliverables. engine.mjs lines 398–414 only recognize deliverables with submit/include/provide/upload and only a short item list. 'A demo video is required' and 'A slide deck is required' produce no extraction or unresolved warning. General limitations mention unextracted text, but the specific review is ready with empty errors. Smallest safe fix: flag recognized requirement/permission sentences that cannot be parsed as unresolved; support explicit negative/optional status before comparing sets.
+2. Plural artifact keyword miss. engine.mjs lines 349–351 match video/recording, not videos/recordings. 'Pitch videos must be at most 2 minutes' silently disappears. Adding plurals alone needs a subject-separation regression: pitch and demo videos are distinct artifacts and must not become unconditional contradictions merely because both have a duration.
+3. Lost-update race and authorization revocation window. server/index.mjs lines 275–294 obtains the authorized workspace snapshot before awaiting request body, compares the submitted revision with that snapshot, then updates by id only. Two requests that both reach body-reading at revision 1 can both succeed with revision 1 and overwrite each other's content. The decisions endpoint at lines 325–352 likewise loads an old workspace before awaiting the body, then replaces the entire stored workspace. An in-flight editor request may also complete after access revocation because it is not rechecked after the await. Smallest fix: read body first, then authorize and fetch current state; use an atomic UPDATE ... WHERE id=? AND revision=? and reject zero updated rows. Decision writes should likewise read current state immediately before synchronous update. This finding is from direct code-path inspection, not a live concurrency reproduction.
+
+Permission review: workspace GET requires owner/editor/reviewer; PUT owner/editor; DELETE and access changes owner; decisions all three roles; template reads are owner-filtered; sessions are looked up by hashed token with expiration. No simple cross-workspace authorization bypass found in this limited read. The async stale authorization/state issue above remains. No independent penetration/load test, live-provider test, human labeling, or real organizer pilot was performed.

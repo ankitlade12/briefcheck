@@ -131,10 +131,8 @@ const noOrigin = await fetch(base + "/api/reviews", {
   body: JSON.stringify({ documents: docs }),
 });
 assert.equal(noOrigin.status, 403);
-assert.equal(
-  (await call("/reviews", { documents: docs, mode: "ai" })).status,
-  400,
-);
+const config=await call('/config');
+if(!config.data.aiEnabled) assert.equal((await call('/reviews',{documents:docs,mode:'ai'})).status,400);
 assert.equal(
   (await call("/import/url", { url: "https://127.0.0.1/" })).status,
   400,

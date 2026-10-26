@@ -1,0 +1,30 @@
+import {chromium} from '@playwright/test';
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+const base='http://127.0.0.1:5174';
+const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH});
+try{
+const context=await browser.newContext();
+const auth=await context.request.post(base+'/api/auth',{headers:{Origin:base},data:{action:'register',name:'browser_'+Date.now(),password:'Synthetic-password-123!'}});assert.equal(auth.status(),200);
+const page=await context.newPage();page.setDefaultTimeout(15000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto(base);console.log('opened');
+await page.getByRole('button',{name:'Load sample materials'}).click();
+await page.getByRole('button',{name:'Review instructions'}).click();
+await page.getByText('Review complete: 2 findings, 0 unresolved extractions.').waitFor();
+await page.getByRole('button',{name:'Workspaces',exact:true}).click();
+await page.getByRole('button',{name:'Save as a private workspace',exact:true}).click();console.log('saved first');
+await page.getByText('Workspace saved privately on this server.').waitFor();
+await page.getByRole('button',{name:'Source materials',exact:true}).click();
+await page.getByRole('button',{name:'Review instructions'}).click();
+await page.getByText('Review complete: 2 findings, 0 unresolved extractions.').waitFor();
+await page.getByRole('button',{name:'Accept finding',exact:true}).click();console.log('accepted');
+await page.getByText('Decision recorded locally. Save the workspace to share this new review and decision.').waitFor();
+await page.getByRole('button',{name:'Workspaces',exact:true}).click();
+await page.getByRole('button',{name:'Save current workspace',exact:true}).click();
+await page.getByText('Workspace saved privately on this server.').waitFor();
+const list=await (await context.request.get(base+'/api/workspaces')).json();
+const saved=await (await context.request.get(base+'/api/workspaces/'+list[0].id)).json();
+assert.equal(saved.runs.length,2);assert.ok(Object.values(saved.runs[1].decisions).some(d=>d.status==='accepted'));assert.deepEqual(errors,[]);
+const result={provenance:'Independent AI-agent browser retest, not human validation',createdAt:new Date().toISOString(),pass:true,checked:'Sign in -> load sample -> review -> save workspace -> rerun -> accept unsaved-run finding locally -> save workspace -> server has 2 runs and accepted latest decision',pageErrors:errors};
+await writeFile(new URL('../evaluation/independent-agent.functional-browser-results.json',import.meta.url),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
+}finally{await browser.close();}

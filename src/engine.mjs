@@ -1,4 +1,4 @@
-export const ENGINE_VERSION = "briefcheck-1.0";
+export const ENGINE_VERSION = "briefcheck-1.1";
 export const TOPICS = [
   "duration",
   "team size",
@@ -347,7 +347,7 @@ export function extract(versions) {
         continue;
       }
       let topic =
-        /\b(video|demo|duration|recording)\b/i.test(line) &&
+        /\b(videos?|demo|duration|recording)\b/i.test(line) &&
         /\b(minutes?|seconds?|mins?|secs?)\b/i.test(line)
           ? "duration"
           : /\b(team|teams|members)\b/i.test(line) &&
@@ -357,7 +357,7 @@ export function extract(versions) {
               ? "deadline"
               : null;
       if (topic) {
-        const conditional =
+        const conditional = /\b(pitch|trailer|teaser)\b/i.test(line) ||
           /\b(unless|except|otherwise|if|only when|depending|not)\b/i.test(
             line,
           ) ||
@@ -411,7 +411,13 @@ export function extract(versions) {
           items.push("project description");
         if (/\b(?:scope\.md|prd\.md|spec\.md|planning documents)\b/i.test(line))
           items.push("planning documents");
-        if (items.length) add("deliverables", null, items);
+        if (items.length && !/\b(not|unless|except)\b/i.test(line)) add("deliverables", null, items);
+      }
+      const artifact = /\b(videos?|recording|slide deck|repository|source code|description|write.up|planning documents)\b/i.test(line);
+      const instruction = /\b(required|must|shall|may|optional|not required)\b/i.test(line);
+      if (artifact && instruction && !topic && !requirements.some(r => r.documentId === d.id && r.evidence.start === start && r.topic === 'deliverables')) {
+        add('deliverables', null, [], 'unresolved', ['This deliverable wording needs organizer or model interpretation; no mandatory requirement was inferred.']);
+        errors.push({documentId:d.id,topic:'deliverables',message:`Needs deliverable interpretation: ${trimmed}`,evidence});
       }
     }
   }
