@@ -1,0 +1,970 @@
+{
+  "schema_version": "1.0",
+  "exportedAt": "2026-10-26T05:07:23.841Z",
+  "title": "Synthetic English end-to-end verification",
+  "runs": [
+    {
+      "id": "660699ed-41f6-4eba-ab38-d9672482442f",
+      "createdAt": "2026-10-26T05:07:23.236Z",
+      "status": "ready",
+      "mode": "deterministic",
+      "engineVersion": "briefcheck-1.1",
+      "versions": [
+        {
+          "id": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "title": "Event overview",
+          "role": "overview",
+          "coverage": {
+            "criteria": true,
+            "deliverables": true
+          },
+          "url": "",
+          "inputMethod": "synthetic",
+          "provenance": null,
+          "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-19da85640141b826-qhbgky",
+          "parentVersionId": null,
+          "capturedAt": "2026-10-26T05:07:23.229Z",
+          "contentHash": "19da85640141b826d01cf8482bdedb6aa71efb8dab4424f963adb37392f7b594"
+        },
+        {
+          "id": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "title": "Official rules",
+          "role": "official rules",
+          "coverage": {
+            "criteria": true,
+            "deliverables": true
+          },
+          "url": "",
+          "inputMethod": "synthetic",
+          "provenance": null,
+          "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+          "parentVersionId": null,
+          "capturedAt": "2026-10-26T05:07:23.230Z",
+          "contentHash": "e3db727a4ae77684642ad82f0f59a5005f61c2db52ffc9c9947b0b45b1c84ffa"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "1b7dzco",
+          "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "topic": "duration",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lte",
+            "value": 180,
+            "field": "duration"
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "evidence": {
+            "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-19da85640141b826-qhbgky",
+            "start": 43,
+            "end": 80,
+            "quote": "Demo video must be at most 3 minutes.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "155945c",
+          "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "topic": "team size",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lte",
+            "value": 4,
+            "field": "team size"
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "evidence": {
+            "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-19da85640141b826-qhbgky",
+            "start": 81,
+            "end": 114,
+            "quote": "Teams must have at most 4 people.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "1ay1gv8",
+          "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "topic": "deadline",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": {
+            "op": "lte",
+            "value": 1793048400000,
+            "field": "deadline"
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "evidence": {
+            "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-19da85640141b826-qhbgky",
+            "start": 115,
+            "end": 167,
+            "quote": "Submission deadline: October 26 2026 at 5:00 pm EDT.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "ychu3z",
+          "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "topic": "criteria",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": null,
+          "items": [
+            "design",
+            "innovation",
+            "presentation"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "evidence": {
+            "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-19da85640141b826-qhbgky",
+            "start": 169,
+            "end": 219,
+            "quote": "Judging criteria: Design, Innovation, Presentation",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "1wim193",
+          "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "topic": "deliverables",
+          "scope": "general",
+          "modality": "required",
+          "predicate": null,
+          "items": [
+            "code repository",
+            "demo video"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "evidence": {
+            "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-19da85640141b826-qhbgky",
+            "start": 221,
+            "end": 279,
+            "quote": "You must submit a public code repository and a demo video.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "sqd42h",
+          "documentId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "topic": "duration",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lt",
+            "value": 180,
+            "field": "duration"
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "evidence": {
+            "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+            "start": 43,
+            "end": 78,
+            "quote": "Demo video must be under 3 minutes.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "1rxhv79",
+          "documentId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "topic": "team size",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lte",
+            "value": 4,
+            "field": "team size"
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "evidence": {
+            "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+            "start": 79,
+            "end": 112,
+            "quote": "Teams must have at most 4 people.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "1u3zgxq",
+          "documentId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "topic": "deadline",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": {
+            "op": "lte",
+            "value": 1793048400000,
+            "field": "deadline"
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "evidence": {
+            "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+            "start": 113,
+            "end": 165,
+            "quote": "Submission deadline: October 26 2026 at 4:00 pm CDT.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "1ge1ijy",
+          "documentId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "topic": "criteria",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": null,
+          "items": [
+            "design",
+            "potential impact",
+            "innovation",
+            "presentation"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "evidence": {
+            "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+            "start": 167,
+            "end": 235,
+            "quote": "Judging criteria: Design, Potential Impact, Innovation, Presentation",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "1qy1hqm",
+          "documentId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "topic": "deliverables",
+          "scope": "general",
+          "modality": "required",
+          "predicate": null,
+          "items": [
+            "code repository",
+            "demo video"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "evidence": {
+            "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+            "start": 237,
+            "end": 295,
+            "quote": "You must submit a public code repository and a demo video.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        }
+      ],
+      "findings": [
+        {
+          "id": "p5vyf7",
+          "type": "ambiguity",
+          "topic": "duration",
+          "scope": "general",
+          "priority": "Review",
+          "reason": "The passages give different guidance at a duration boundary. The boundary needs an organizer decision.",
+          "requirementIds": [
+            "1b7dzco",
+            "sqd42h"
+          ],
+          "evidence": [
+            {
+              "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-19da85640141b826-qhbgky",
+              "start": 43,
+              "end": 80,
+              "quote": "Demo video must be at most 3 minutes.",
+              "validation": "verified"
+            },
+            {
+              "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+              "start": 43,
+              "end": 78,
+              "quote": "Demo video must be under 3 minutes.",
+              "validation": "verified"
+            }
+          ],
+          "status": "open",
+          "witness": 180
+        },
+        {
+          "id": "1ov7qyw",
+          "type": "omission",
+          "topic": "criteria",
+          "scope": "general",
+          "priority": "Review",
+          "reason": "Event overview is marked as complete for criteria, but does not list: potential impact. This is an omission in supplied material, not a mutually incompatible rule.",
+          "requirementIds": [
+            "1ge1ijy",
+            "ychu3z"
+          ],
+          "evidence": [
+            {
+              "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+              "start": 167,
+              "end": 235,
+              "quote": "Judging criteria: Design, Potential Impact, Innovation, Presentation",
+              "validation": "verified"
+            },
+            {
+              "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-19da85640141b826-qhbgky",
+              "start": 169,
+              "end": 219,
+              "quote": "Judging criteria: Design, Innovation, Presentation",
+              "validation": "verified"
+            }
+          ],
+          "status": "open",
+          "missing": [
+            "potential impact"
+          ],
+          "targetDocumentId": "b9615787-0853-4760-b9ac-4593da0d9b18"
+        }
+      ],
+      "errors": [],
+      "coverage": [
+        {
+          "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "title": "Event overview",
+          "topics": [
+            {
+              "topic": "duration",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "team size",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "deadline",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "criteria",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "deliverables",
+              "extracted": 1,
+              "unresolved": 0
+            }
+          ]
+        },
+        {
+          "documentId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "title": "Official rules",
+          "topics": [
+            {
+              "topic": "duration",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "team size",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "deadline",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "criteria",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "deliverables",
+              "extracted": 1,
+              "unresolved": 0
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only supplied documents were inspected; no eligibility or legal verdict.",
+        "Source verification confirms the quote, not the interpretation.",
+        "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+      ],
+      "scenarios": [
+        {
+          "id": "e5187559-ac6e-4fc5-a822-4f4c9c7f011d",
+          "runId": "660699ed-41f6-4eba-ab38-d9672482442f",
+          "findingId": "p5vyf7",
+          "topic": "duration",
+          "scope": "general",
+          "facts": {
+            "duration": 180,
+            "track": "general"
+          },
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested.",
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "at": "2026-10-26T05:07:23.374Z",
+          "evaluatorVersion": "briefcheck-1.1",
+          "predicates": [
+            {
+              "id": "1b7dzco",
+              "predicate": {
+                "op": "lte",
+                "value": 180,
+                "field": "duration"
+              },
+              "items": [],
+              "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-19da85640141b826-qhbgky"
+            },
+            {
+              "id": "sqd42h",
+              "predicate": {
+                "op": "lt",
+                "value": 180,
+                "field": "duration"
+              },
+              "items": [],
+              "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk"
+            }
+          ],
+          "outcomes": [
+            {
+              "requirementId": "1b7dzco",
+              "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-19da85640141b826-qhbgky",
+              "result": "Meets this stated requirement"
+            },
+            {
+              "requirementId": "sqd42h",
+              "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+              "result": "Does not meet this stated requirement"
+            }
+          ]
+        }
+      ],
+      "decisions": {},
+      "model": null,
+      "promptVersion": null,
+      "usage": null,
+      "timingMs": 7
+    },
+    {
+      "id": "40bae764-17f0-42ca-991a-d51d3a7e7770",
+      "createdAt": "2026-10-26T05:07:23.709Z",
+      "status": "ready",
+      "mode": "deterministic",
+      "engineVersion": "briefcheck-1.1",
+      "versions": [
+        {
+          "id": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "title": "Event overview",
+          "role": "overview",
+          "coverage": {
+            "criteria": true,
+            "deliverables": true
+          },
+          "url": "",
+          "inputMethod": "local draft",
+          "provenance": null,
+          "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-b7e73811e7fe8bbb-qhbgky",
+          "parentVersionId": "b9615787-0853-4760-b9ac-4593da0d9b18-19da85640141b826-qhbgky",
+          "capturedAt": "2026-10-26T05:07:23.709Z",
+          "contentHash": "b7e73811e7fe8bbb2fe9c687df93cc9fd8c01aa588a6b1b16a3fb3c0ab7a5185"
+        },
+        {
+          "id": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "title": "Official rules",
+          "role": "official rules",
+          "coverage": {
+            "criteria": true,
+            "deliverables": true
+          },
+          "url": "",
+          "inputMethod": "synthetic",
+          "provenance": null,
+          "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+          "parentVersionId": null,
+          "capturedAt": "2026-10-26T05:07:23.709Z",
+          "contentHash": "e3db727a4ae77684642ad82f0f59a5005f61c2db52ffc9c9947b0b45b1c84ffa"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "g19li0",
+          "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "topic": "duration",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lt",
+            "value": 180,
+            "field": "duration"
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "evidence": {
+            "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-b7e73811e7fe8bbb-qhbgky",
+            "start": 43,
+            "end": 80,
+            "quote": "Demo video must be under 180 seconds.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "155945c",
+          "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "topic": "team size",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lte",
+            "value": 4,
+            "field": "team size"
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "evidence": {
+            "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-b7e73811e7fe8bbb-qhbgky",
+            "start": 81,
+            "end": 114,
+            "quote": "Teams must have at most 4 people.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "1ay1gv8",
+          "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "topic": "deadline",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": {
+            "op": "lte",
+            "value": 1793048400000,
+            "field": "deadline"
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "evidence": {
+            "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-b7e73811e7fe8bbb-qhbgky",
+            "start": 115,
+            "end": 167,
+            "quote": "Submission deadline: October 26 2026 at 5:00 pm EDT.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "ychu3z",
+          "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "topic": "criteria",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": null,
+          "items": [
+            "design",
+            "innovation",
+            "presentation"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "evidence": {
+            "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-b7e73811e7fe8bbb-qhbgky",
+            "start": 169,
+            "end": 219,
+            "quote": "Judging criteria: Design, Innovation, Presentation",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "1wim193",
+          "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "topic": "deliverables",
+          "scope": "general",
+          "modality": "required",
+          "predicate": null,
+          "items": [
+            "code repository",
+            "demo video"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "evidence": {
+            "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-b7e73811e7fe8bbb-qhbgky",
+            "start": 221,
+            "end": 279,
+            "quote": "You must submit a public code repository and a demo video.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "sqd42h",
+          "documentId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "topic": "duration",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lt",
+            "value": 180,
+            "field": "duration"
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "evidence": {
+            "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+            "start": 43,
+            "end": 78,
+            "quote": "Demo video must be under 3 minutes.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "1rxhv79",
+          "documentId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "topic": "team size",
+          "scope": "general",
+          "modality": "required",
+          "predicate": {
+            "op": "lte",
+            "value": 4,
+            "field": "team size"
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "evidence": {
+            "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+            "start": 79,
+            "end": 112,
+            "quote": "Teams must have at most 4 people.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "1u3zgxq",
+          "documentId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "topic": "deadline",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": {
+            "op": "lte",
+            "value": 1793048400000,
+            "field": "deadline"
+          },
+          "items": [],
+          "status": "supported",
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "evidence": {
+            "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+            "start": 113,
+            "end": 165,
+            "quote": "Submission deadline: October 26 2026 at 4:00 pm CDT.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "1ge1ijy",
+          "documentId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "topic": "criteria",
+          "scope": "general",
+          "modality": "descriptive",
+          "predicate": null,
+          "items": [
+            "design",
+            "potential impact",
+            "innovation",
+            "presentation"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "evidence": {
+            "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+            "start": 167,
+            "end": 235,
+            "quote": "Judging criteria: Design, Potential Impact, Innovation, Presentation",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        },
+        {
+          "id": "1qy1hqm",
+          "documentId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "topic": "deliverables",
+          "scope": "general",
+          "modality": "required",
+          "predicate": null,
+          "items": [
+            "code repository",
+            "demo video"
+          ],
+          "status": "supported",
+          "assumptions": [],
+          "evidence": {
+            "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+            "start": 237,
+            "end": 295,
+            "quote": "You must submit a public code repository and a demo video.",
+            "validation": "verified"
+          },
+          "conditions": [],
+          "exceptions": []
+        }
+      ],
+      "findings": [
+        {
+          "id": "1ov7qyw",
+          "type": "omission",
+          "topic": "criteria",
+          "scope": "general",
+          "priority": "Review",
+          "reason": "Event overview is marked as complete for criteria, but does not list: potential impact. This is an omission in supplied material, not a mutually incompatible rule.",
+          "requirementIds": [
+            "1ge1ijy",
+            "ychu3z"
+          ],
+          "evidence": [
+            {
+              "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+              "start": 167,
+              "end": 235,
+              "quote": "Judging criteria: Design, Potential Impact, Innovation, Presentation",
+              "validation": "verified"
+            },
+            {
+              "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-b7e73811e7fe8bbb-qhbgky",
+              "start": 169,
+              "end": 219,
+              "quote": "Judging criteria: Design, Innovation, Presentation",
+              "validation": "verified"
+            }
+          ],
+          "status": "open",
+          "missing": [
+            "potential impact"
+          ],
+          "targetDocumentId": "b9615787-0853-4760-b9ac-4593da0d9b18"
+        }
+      ],
+      "errors": [],
+      "coverage": [
+        {
+          "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+          "title": "Event overview",
+          "topics": [
+            {
+              "topic": "duration",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "team size",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "deadline",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "criteria",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "deliverables",
+              "extracted": 1,
+              "unresolved": 0
+            }
+          ]
+        },
+        {
+          "documentId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25",
+          "title": "Official rules",
+          "topics": [
+            {
+              "topic": "duration",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "team size",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "deadline",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "criteria",
+              "extracted": 1,
+              "unresolved": 0
+            },
+            {
+              "topic": "deliverables",
+              "extracted": 1,
+              "unresolved": 0
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Only supplied documents were inspected; no eligibility or legal verdict.",
+        "Source verification confirms the quote, not the interpretation.",
+        "Local parser supports explicit English patterns only. Other wording and unextracted content are unreviewed."
+      ],
+      "scenarios": [
+        {
+          "id": "71d1a94c-5a83-498f-9d64-3bc13e53b207",
+          "runId": "40bae764-17f0-42ca-991a-d51d3a7e7770",
+          "findingId": "p5vyf7",
+          "topic": "duration",
+          "scope": "general",
+          "facts": {
+            "duration": 180,
+            "track": "general"
+          },
+          "assumptions": [
+            "Only this passage and the explicitly selected track are tested.",
+            "Only this passage and the explicitly selected track are tested."
+          ],
+          "at": "2026-10-26T05:07:23.724Z",
+          "evaluatorVersion": "briefcheck-1.1",
+          "predicates": [
+            {
+              "id": "g19li0",
+              "predicate": {
+                "op": "lt",
+                "value": 180,
+                "field": "duration"
+              },
+              "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-b7e73811e7fe8bbb-qhbgky"
+            },
+            {
+              "id": "sqd42h",
+              "predicate": {
+                "op": "lt",
+                "value": 180,
+                "field": "duration"
+              },
+              "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk"
+            }
+          ],
+          "outcomes": [
+            {
+              "requirementId": "g19li0",
+              "versionId": "b9615787-0853-4760-b9ac-4593da0d9b18-b7e73811e7fe8bbb-qhbgky",
+              "result": "Does not meet this stated requirement"
+            },
+            {
+              "requirementId": "sqd42h",
+              "versionId": "b06fc2b6-a74d-4f35-a3b9-b4077729cb25-e3db727a4ae77684-4vvyjk",
+              "result": "Does not meet this stated requirement"
+            }
+          ],
+          "rerunOf": "e5187559-ac6e-4fc5-a822-4f4c9c7f011d",
+          "stale": false
+        }
+      ],
+      "decisions": {},
+      "model": null,
+      "promptVersion": null,
+      "usage": null,
+      "timingMs": 0
+    }
+  ],
+  "revisions": [
+    {
+      "id": "d16e72e7-c19a-48fe-a7b8-89edcd128cd3",
+      "documentId": "b9615787-0853-4760-b9ac-4593da0d9b18",
+      "title": "Event overview",
+      "parentVersionId": "b9615787-0853-4760-b9ac-4593da0d9b18-19da85640141b826-qhbgky",
+      "changedSpans": {
+        "start": 62,
+        "oldEnd": 78,
+        "newEnd": 78
+      },
+      "reason": "Organizer selected: exclude the exact boundary. This may change policy meaning.",
+      "at": "2026-10-26T05:07:23.675Z"
+    }
+  ],
+  "clarifications": [],
+  "stale": false,
+  "sourceTextIncluded": false,
+  "privacyNote": "Evidence quotes and decisions are included even when full source text is excluded. Review before sharing."
+}
