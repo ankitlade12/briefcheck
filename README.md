@@ -119,9 +119,9 @@ node tests/keyboard.mjs
 
 Use `BRIEFCHECK_DB=:memory: npm run dev` for a disposable test server. API tests create accounts. `CHROME_PATH` can select an existing compatible browser. Live provider and GitHub export tests are opt-in because they incur external effects.
 
-Recorded verification includes **26 passing unit tests**, browser/API workflows, keyboard checks, accessibility scans, real imports, a live English OpenAI smoke test, and a GitHub report export. A separate AI-agent review found defects that were fixed and retested. See the [raw evaluation evidence](evaluation/).
+Recorded verification includes **26 passing unit tests**, browser/API workflows, keyboard checks, accessibility scans, real imports, a live English OpenAI smoke test, and a GitHub report export. A separate AI-agent review found defects that were fixed and retested.
 
-The historical engine-1.0 benchmark is synthetic and agent-labeled. It is not production accuracy or independent human validation. Organizer pilots and broader conditional-language evaluation remain future work.
+These checks are not a production accuracy estimate or independent human validation. Organizer pilots and broader conditional-language evaluation remain future work. Test output is saved under ignored `test-results/`.
 
 ## Project Structure
 
@@ -130,11 +130,8 @@ briefcheck/
 ├── src/          # React interface, comparison engine, scenarios, exports
 ├── server/       # API, model extraction, imports, storage, integrations
 ├── tests/        # Unit, browser, API, and accessibility checks
-├── evaluation/   # Test cases, original failures, and retest evidence
 ├── devpost/      # Required scope, PRD, and technical specification
 ├── skills/       # Official MIT-licensed Devpost Learn Skill Pack
-├── scripts/      # Local demo recording and packaging
-├── reports/      # Synthetic report from the integration test
 └── .env.example  # Configuration reference
 ```
 

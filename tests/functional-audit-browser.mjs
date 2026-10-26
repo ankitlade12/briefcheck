@@ -1,6 +1,6 @@
 import {chromium} from '@playwright/test';
 import assert from 'node:assert/strict';
-import {writeFile} from 'node:fs/promises';
+import {writeFile,mkdir} from 'node:fs/promises';
 const base='http://127.0.0.1:5174';
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH});
 try{
@@ -26,5 +26,6 @@ const list=await (await context.request.get(base+'/api/workspaces')).json();
 const saved=await (await context.request.get(base+'/api/workspaces/'+list[0].id)).json();
 assert.equal(saved.runs.length,2);assert.ok(Object.values(saved.runs[1].decisions).some(d=>d.status==='accepted'));assert.deepEqual(errors,[]);
 const result={provenance:'Independent AI-agent browser retest, not human validation',createdAt:new Date().toISOString(),pass:true,checked:'Sign in -> load sample -> review -> save workspace -> rerun -> accept unsaved-run finding locally -> save workspace -> server has 2 runs and accepted latest decision',pageErrors:errors};
-await writeFile(new URL('../evaluation/independent-agent.functional-browser-results.json',import.meta.url),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
+await mkdir(new URL('../test-results/',import.meta.url),{recursive:true});
+await writeFile(new URL('../test-results/independent-agent.functional-browser-results.json',import.meta.url),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
 }finally{await browser.close();}

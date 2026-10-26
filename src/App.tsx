@@ -11,7 +11,6 @@ import {
 } from "./engine.mjs";
 import { exportData, htmlReport } from "./export.mjs";
 import { carryReviewState } from "./review-state.mjs";
-import evaluation from "../evaluation/heldout-results.json";
 import { blankDocument, sampleDocuments, observedDocuments } from "./samples";
 
 type Data = any;
@@ -1473,29 +1472,6 @@ export default function App() {
                   </div>
                   <h3>Source-to-requirement map</h3>
                   <DependencyMap review={current} />
-                  <h3>Historical synthetic evaluation · engine 1.0</h3>
-                  <p className="muted">
-                    {evaluation.counts.cases} held-out cases ·{" "}
-                    {evaluation.counts.truePositive} detected issues ·{" "}
-                    {evaluation.counts.falsePositive} false positives ·{" "}
-                    {evaluation.counts.falseNegative} misses ·{" "}
-                    {evaluation.counts.verifiedEvidence}/
-                    {evaluation.counts.totalEvidence} valid evidence spans.
-                    Agent-labeled explicit-pattern dataset; not independent
-                    validation or live AI accuracy.
-                  </p>
-                  <button
-                    className="button"
-                    onClick={() =>
-                      download(
-                        "briefcheck-evaluation.json",
-                        JSON.stringify(evaluation, null, 2),
-                        "application/json",
-                      )
-                    }
-                  >
-                    Download raw evaluation counts
-                  </button>
                   <h3>Extracted requirements</h3>
                   {current.requirements.map((r: Data) => (
                     <details key={r.id}>

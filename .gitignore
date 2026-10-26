@@ -11,3 +11,6 @@ dist/
 .data/
 
 /artifacts/
+
+# Generated report archives stay out of source control.
+/reports/

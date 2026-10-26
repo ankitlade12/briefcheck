@@ -1,6 +1,6 @@
 // Independent AI-agent functional probe, no provider calls. Fresh in-memory server on port 5174.
 import assert from 'node:assert/strict';
-import {writeFile} from 'node:fs/promises';
+import {writeFile,mkdir} from 'node:fs/promises';
 import {analyze} from '../server/analysis.mjs';
 import {assembleReview} from '../src/engine.mjs';
 import {carryReviewState} from '../src/review-state.mjs';
@@ -41,4 +41,5 @@ results.push({check:'predicate correction must flag carried decision for reconfi
 const all=exportData({...workspace,runs:[run,corrected]},true),redacted=exportData({...workspace,runs:[run,corrected]},false);
 assert.equal(all.runs[0].versions[0].text,docs[0].text);assert.equal(redacted.runs[0].versions[0].text,undefined);assert.equal(redacted.runs[0].versions[0].contentHash,run.versions[0].contentHash);assert.ok(htmlReport(all).includes(run.versions[0].contentHash));results.push({check:'export retains version hashes and includes raw text only on opt-in',pass:true});
 const result={provenance:'Independent AI-agent functional probe, not human validation',createdAt:new Date().toISOString(),results};
-await writeFile(new URL('../evaluation/independent-agent.functional-results.json',import.meta.url),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
+await mkdir(new URL('../test-results/',import.meta.url),{recursive:true});
+await writeFile(new URL('../test-results/independent-agent.functional-results.json',import.meta.url),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
