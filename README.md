@@ -4,14 +4,14 @@
 
 BriefCheck gives hackathon organizers one workspace to compare event instructions, inspect the evidence behind a finding, test its consequences, and verify a correction. Every review preserves the source versions that produced it.
 
-**English-only proof of concept · React + TypeScript · Node.js · SQLite · Optional OpenAI extraction · MIT**
+**React + TypeScript · Node.js · SQLite · Optional OpenAI extraction · MIT**
 
 ## Quick Highlights
 
 - **Evidence you can inspect** — exact source passages, verified offsets, and immutable document snapshots.
 - **Concrete boundary tests** — see whether the same video duration, team size, or deadline satisfies different instructions.
 - **A complete correction loop** — edit a local draft, rerun, and distinguish resolved issues from unchanged findings.
-- **Two analysis modes** — deterministic English patterns without an API key, or optional structured AI extraction followed by application checks.
+- **Two analysis modes** — deterministic patterns without an API key, or optional structured AI extraction followed by application checks.
 - **Private saved workspaces** — owner, editor, and reviewer roles, reusable templates, and version checks for concurrent edits.
 - **Portable review records** — printable HTML and JSON with findings, decisions, evidence, revisions, and saved scenarios.
 
@@ -31,7 +31,7 @@ BriefCheck makes that difference visible, leaves the intended meaning to the org
 ```mermaid
 flowchart LR
     A[Paste or import documents] --> B[Versioned source snapshots]
-    B --> C[English parser or AI extraction]
+    B --> C[Pattern parser or AI extraction]
     C --> D[Validate evidence and compare requirements]
     D --> E[Inspect findings and test scenarios]
     E --> F[Edit a local draft]
@@ -47,7 +47,7 @@ AI extraction returns structured requirements; application code verifies source 
 |---|---|---|
 | Interface | React, TypeScript, Vite | Document review, scenarios, revisions, and exports |
 | API | Node.js | Validation, analysis, imports, and access control |
-| AI | OpenAI / AI Gateway through the Vercel AI SDK, Zod | Optional structured English extraction |
+| AI | OpenAI / AI Gateway through the Vercel AI SDK, Zod | Optional structured requirement extraction |
 | Storage | SQLite | Accounts, private workspaces, roles, and templates |
 | Imports | Cheerio, PDF.js | Public HTTPS pages and text-based PDFs |
 | Verification | Node test runner, Playwright, axe | Regression, browser, API, and accessibility checks |
@@ -131,7 +131,6 @@ briefcheck/
 ├── server/       # API, model extraction, imports, storage, integrations
 ├── tests/        # Unit, browser, API, and accessibility checks
 ├── devpost/      # Required scope, PRD, and technical specification
-├── skills/       # Official MIT-licensed Devpost Learn Skill Pack
 └── .env.example  # Configuration reference
 ```
 
@@ -143,7 +142,7 @@ BriefCheck supports organizer review; it does not decide eligibility, legal comp
 
 - [Scope](devpost/scope.md) · [Product requirements](devpost/prd.md) · [Technical specification](devpost/spec.md)
 
-Built for **Build With AI: Basics** using the Devpost Learn Skill Pack and an AI coding assistant. Source implementation began October 25, 2026. The supplied PRD was pre-existing product planning. Planning records document the adapted workflow and delegated testing. The official skill pack retains its [MIT license](skills/LICENSE); dependency versions are recorded in `package-lock.json`.
+Built for **Build With AI: Basics** using the Devpost Learn Skill Pack and an AI coding assistant. Source implementation began October 25, 2026. The supplied PRD was pre-existing product planning. Planning records document the adapted workflow and delegated testing. The [Devpost Learn Skill Pack](https://github.com/challengepost/learn-ai-basics) supplied the planning workflow. Its template attribution is preserved in [LICENSE](LICENSE); dependency versions are recorded in `package-lock.json`.
 
 ## License
 

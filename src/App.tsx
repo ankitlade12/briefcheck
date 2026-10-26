@@ -628,7 +628,7 @@ export default function App() {
               </h1>
               <p>
                 {tab === "materials"
-                  ? "Bring your English event instructions together. Find the gaps before your participants do."
+                  ? "Bring your event instructions together. Find the gaps before your participants do."
                   : tab === "review"
                     ? "Follow the evidence, test an example, and make an informed correction."
                     : tab === "coverage"
@@ -909,10 +909,10 @@ export default function App() {
                       onChange={(e) => setMode(e.target.value)}
                     >
                       <option value="deterministic">
-                        Deterministic · explicit English patterns
+                        Deterministic · pattern checks
                       </option>
                       <option value="ai" disabled={!config.aiEnabled}>
-                        AI-assisted · English & conditions
+                        AI-assisted · structured extraction
                         {!config.aiEnabled ? " (server setup needed)" : ""}
                       </option>
                     </select>

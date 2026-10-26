@@ -2,7 +2,7 @@
 status: approved
 ---
 # BriefCheck product requirements
-Product direction adopted from the supplied document at the user's express request to build it. The full, unabridged extracted source is [source-prd.txt](source-prd.txt); that document's numbered FR01–FR20, T01–T15, priorities and quality gates remain authoritative. This file is an implementation index, not a replacement or claim of completed requirements.
+Product direction adopted from the supplied BriefCheck PRD. This plan summarizes the implemented workflow and remaining validation goals. The original planning document is retained locally.
 ## Core Journey
 Add labeled sources → review findings and exact passages → test a concrete case → record a decision → edit a local draft → recheck and inspect change impact → export.
 ## Features and Behavior
@@ -17,13 +17,13 @@ FR15–18: organizer chooses policy before applying a suggestion, immutable revi
 ### Export and Reversibility
 FR19–20: versioned JSON and printable HTML, source inclusion opt-in, decisions, coverage, tests, versions, undo and prior review inspection.
 ### Expanded Workspace
-P1 and P2 from scope.md: imports, persisted workspaces and access controls, coverage/baselines, integrations, reusable templates, multilingual extraction and advanced conditions.
+P1 and P2 from scope.md: imports, persisted workspaces and access controls, coverage/baselines, integrations, reusable templates, bounded conditional extraction; broader language support remains future work.
 ## Look and Feel
 Light editorial workspace, restrained teal accent, spacious evidence columns, responsive stacked layout, visible focus, real buttons, status announcements and actionable errors. No generic compliance percentage.
 ## Acceptance
-Source PRD T01–T15 plus keyboard end-to-end flow, provider failure, unsupported interpretation, 40-case evaluation with held-out split and raw counts. Do not claim evaluation success before execution.
+Verify exact evidence, duration boundaries, scoped comparisons, omissions, immutable revisions, reruns, exports, access controls, keyboard workflows, and provider failure recovery. Broader extraction accuracy and organizer pilots remain validation goals.
 ## Product Decisions
 No public sharing by default. Text stays in memory for anonymous review; persistence is explicit. AI requests disclose provider transfer. No automatic policy precedence. All simulations and synthetic samples are labeled.
 
 ## Current release constraint
-English-only, as explicitly requested by the user. Earlier multilingual smoke results are research artifacts, not a supported-feature claim.
+Supported source language: English. Multilingual experiments do not establish supported release functionality.
