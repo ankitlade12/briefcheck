@@ -152,4 +152,4 @@ Built for **Build With AI: Basics** using the Devpost Learn Skill Pack and an AI
 
 ## License
 
-[MIT](LICENSE) — Copyright © 2026 Ankit Hemant Lade.
+[MIT](LICENSE)
