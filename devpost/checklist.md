@@ -50,3 +50,5 @@ mode: fast
 
 - English-only release requested; multilingual feature removed from current release scope.
 - Public repository and demo preparation authorized by request to complete outstanding items.
+
+- Documentation cleanup: architecture and code navigation are consolidated in README.md. The original app map and superseded shipping/demo notes are retained only in ignored local artifacts/docs-backup/. Required planning and verification records remain in the repository.

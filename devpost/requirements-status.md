@@ -40,6 +40,6 @@ The user's explicit scope includes P0, P1 and P2. **Implemented** means code exi
 - Request budget: at most two model calls; 60-second timeout; concurrent/rate/request-count limits. Live English smoke latency recorded (9.7 seconds); provider monetary cap and representative load/cost study remain pending.
 - Evaluation: 40 labeled cases (20 development, 20 held out at frozen engine hash), required category totals, raw counts. Agent-authored labels are a limitation. Independent human labeling and simple-prompt baseline comparison remain pending.
 - Organizer pilot: **not conducted**. No adoption, support-saving, commercial demand, pricing or customer claims.
-- Submission: source, license, plans, demo walkthrough and app map prepared. Personal eligibility and registration attested by user; hands-on testing explicitly delegated to agent. See shipping-status.md for current public repository, demo and submission status.
+- Submission: source, license, plans, demo walkthrough and app map prepared. Personal eligibility and registration attested by user; hands-on testing explicitly delegated to agent. See hackathon-checklist.md for current public repository, demo and submission status.
 
 This ledger is not a declaration that every PRD ambition has been completed or validated. External dependencies and research remain explicit.

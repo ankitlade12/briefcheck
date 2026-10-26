@@ -1,96 +1,155 @@
-# BriefCheck
+# BriefCheck — Hackathon Instruction Review
 
-An independent organizer workspace for reviewing hackathon instructions: **evidence → example → decision → retest**.
+> **Catch conflicting rules and missing requirements before participants do.**
 
-Paste or import event materials, compare supported requirements, inspect exact source passages, test boundary cases, record a decision, edit a local draft, and rerun. Original source snapshots remain in the review history.
+BriefCheck gives hackathon organizers one workspace to compare event instructions, inspect the evidence behind a finding, test its consequences, and verify a correction. Every review preserves the source versions that produced it.
 
-## Run locally
+**English-only proof of concept · React + TypeScript · Node.js · SQLite · Optional OpenAI extraction · MIT**
 
-Requires Node.js **22.13+** (tested with 25.2.1) and npm.
+## Quick Highlights
+
+- **Evidence you can inspect** — exact source passages, verified offsets, and immutable document snapshots.
+- **Concrete boundary tests** — see whether the same video duration, team size, or deadline satisfies different instructions.
+- **A complete correction loop** — edit a local draft, rerun, and distinguish resolved issues from unchanged findings.
+- **Two analysis modes** — deterministic English patterns without an API key, or optional structured AI extraction followed by application checks.
+- **Private saved workspaces** — owner, editor, and reviewer roles, reusable templates, and version checks for concurrent edits.
+- **Portable review records** — printable HTML and JSON with findings, decisions, evidence, revisions, and saved scenarios.
+
+## The Problem
+
+Event instructions are spread across overviews, official rules, submission guidelines, and FAQs. A small wording difference can change what a participant is allowed to submit.
+
+| Instruction | Exactly 180 seconds |
+|---|---|
+| “Demo video must be at most 3 minutes.” | Meets the requirement |
+| “Demo video must be under 3 minutes.” | Does not meet the requirement |
+
+BriefCheck makes that difference visible, leaves the intended meaning to the organizer, and checks the revised instructions afterward.
+
+## How It Works
+
+```mermaid
+flowchart LR
+    A[Paste or import documents] --> B[Versioned source snapshots]
+    B --> C[English parser or AI extraction]
+    C --> D[Validate evidence and compare requirements]
+    D --> E[Inspect findings and test scenarios]
+    E --> F[Edit a local draft]
+    F --> B
+    E --> G[Save decisions and export review]
+```
+
+AI extraction returns structured requirements; application code verifies source quotes and evaluates supported predicates. Unsupported or unresolved interpretations remain visible. A valid quote does not guarantee a correct interpretation.
+
+### Tech Stack
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| Interface | React, TypeScript, Vite | Document review, scenarios, revisions, and exports |
+| API | Node.js | Validation, analysis, imports, and access control |
+| AI | OpenAI / AI Gateway through the Vercel AI SDK, Zod | Optional structured English extraction |
+| Storage | SQLite | Accounts, private workspaces, roles, and templates |
+| Imports | Cheerio, PDF.js | Public HTTPS pages and text-based PDFs |
+| Verification | Node test runner, Playwright, axe | Regression, browser, API, and accessibility checks |
+
+## Quick Start
+
+Requires **Node.js 22.13+** and npm; tested with Node 25.2.1.
 
 ```sh
+git clone https://github.com/ankitlade12/briefcheck.git
+cd briefcheck
 npm ci
 npm run dev
 ```
 
-Open **http://127.0.0.1:5173**. Load the synthetic sample and choose **Review instructions**. No API key is needed for deterministic review. The sample goes through the actual analysis pipeline; it is not a recorded answer.
+Open **http://127.0.0.1:5173**. Deterministic review works without an API key. The server binds to the local computer by default; no public hosted app is currently provided.
+
+For a production build:
 
 ```sh
-npm run check                 # regression tests + TypeScript + production build
+npm run build
 NODE_ENV=production npm run dev
 ```
 
-The application binds to loopback by default. Browser tests require a running local server:
+## Try the Complete Workflow
+
+1. Choose **Load sample materials**, then **Review instructions**.
+2. Inspect the duration finding and the missing judging criterion.
+3. Test **180s**: one instruction passes while the other fails. Save the scenario.
+4. Open **Inspect exact passage** to check the source evidence.
+5. Choose **Edit local draft**, exclude the exact boundary, apply the wording, and save.
+6. **Rerun review**, then open **Coverage**. The duration issue resolves; the criterion omission remains.
+7. Export the review as JSON or printable HTML, preserving both runs and the revision.
+
+The sample is synthetic and runs through the actual analysis pipeline. Edits affect local drafts, not the published event website.
+
+## Configuration
+
+Copy `.env.example` to `.env` for optional configuration. Keep credentials on the server; `.env` and the local database are ignored by Git.
+
+| Setting | Purpose |
+|---|---|
+| `OPENAI_API_KEY` | Enable direct OpenAI extraction |
+| `BRIEFCHECK_MODEL` | Model name; direct OpenAI defaults to `gpt-5-mini` |
+| `AI_GATEWAY_API_KEY` | Alternative AI Gateway authentication; use a compatible `provider/model-id` |
+| `BRIEFCHECK_DB` | SQLite location; use `:memory:` for disposable tests |
+| `BRIEFCHECK_MAX_AI_REVIEWS` | Per-process request ceiling, not a monetary budget |
+| `BRIEFCHECK_WEBHOOK_URL` / `BRIEFCHECK_WEBHOOK_TOKEN` | Optional HTTPS report destination |
+| `BRIEFCHECK_GITHUB_REPO` | Optional local-only public report archive through authenticated GitHub CLI |
+
+Restart the server after configuration and select **AI-assisted**. Direct OpenAI takes precedence when both provider keys are set. AI mode sends supplied text to the provider; provider retention and billing settings apply. Reviews allow at most two model calls with a 60-second timeout. Failed extraction does not silently switch modes.
+
+Reports sent to an integration require sign-in and explicit confirmation. GitHub exports are public and restricted to a loopback server and request. This integration exports review data; project images and videos stay local.
+
+Anonymous work stays in browser memory until saved or exported. Saved accounts and workspaces use `.data/briefcheck.sqlite` by default. Remote hosting requires persistent storage, HTTPS, `BRIEFCHECK_SECURE_COOKIE=true`, `BRIEFCHECK_HOSTNAME`, and a suitable bind address. The single-process SQLite deployment has not been independently security-audited or load-tested for public hosting.
+
+## Verification
 
 ```sh
+npm run check                   # unit tests, TypeScript, production build
 npx playwright install chromium
-node tests/browser.mjs
-node tests/api.mjs
-node tests/imports.mjs
-node tests/accessibility.mjs
+# With a separate local server running:
+npm run test:browser
+npm run test:api
+npm run test:imports
+npm run test:a11y
 node tests/keyboard.mjs
 ```
 
-`CHROME_PATH` can select an existing compatible Chromium binary. API tests create disposable accounts and delete their test workspace; use a dedicated test database (`BRIEFCHECK_DB=:memory:`) when running a test server.
+Use `BRIEFCHECK_DB=:memory: npm run dev` for a disposable test server. API tests create accounts. `CHROME_PATH` can select an existing compatible browser. Live provider and GitHub export tests are opt-in because they incur external effects.
 
-## Live OpenAI or AI Gateway extraction
+Recorded verification includes **26 passing unit tests**, browser/API workflows, keyboard checks, accessibility scans, real imports, a live English OpenAI smoke test, and a GitHub report export. A separate AI-agent review found defects that were fixed and retested. See the [verification record](devpost/verification.md) and [raw evaluation evidence](evaluation/).
 
-Copy `.env.example` to `.env` and configure either:
+The historical engine-1.0 benchmark is synthetic and agent-labeled. It is not production accuracy or independent human validation. Organizer pilots and broader conditional-language evaluation remain future work.
 
-```dotenv
-OPENAI_API_KEY=your-local-key
-BRIEFCHECK_MODEL=gpt-5-mini
+## Project Structure
+
+```text
+briefcheck/
+├── src/          # React interface, comparison engine, scenarios, exports
+├── server/       # API, model extraction, imports, storage, integrations
+├── tests/        # Unit, browser, API, and accessibility checks
+├── evaluation/   # Test cases, original failures, and retest evidence
+├── devpost/      # Required plans, feature ledger, verification, submission checklist
+├── skills/       # Official MIT-licensed Devpost Learn Skill Pack
+├── scripts/      # Local demo recording and packaging
+├── reports/      # Synthetic report from the integration test
+└── .env.example  # Configuration reference
 ```
 
-or:
+## Scope and Planning
 
-```dotenv
-AI_GATEWAY_API_KEY=your-local-gateway-key
-BRIEFCHECK_MODEL=provider/model-id
-```
+The current release accepts **2–4 documents and 40,000 combined characters**. It supports English duration, team-size, zoned-deadline, criteria, and deliverable patterns, with bounded conditions. Imports support public HTTPS pages and text PDFs, not OCR, authenticated pages, or JavaScript-rendered content.
 
-Restart the server, then select **AI-assisted**. Direct OpenAI uses the Responses API through the AI SDK; `gpt-5-mini` is the configurable default, verified to support structured outputs in the [official model reference](https://developers.openai.com/api/docs/models/gpt-5-mini). Set a model available to your account. Do not commit `.env` or put a key in browser code. Direct OpenAI takes precedence when both keys are set.
+BriefCheck supports organizer review; it does not decide eligibility, legal compliance, plagiarism, or winners. It is independent of Devpost.
 
-Live AI transfers supplied text to the configured provider. The application does not claim zero provider retention. Configure your provider's retention and monetary spend limits before using sensitive documents or exposing a hosted demo. `BRIEFCHECK_MAX_AI_REVIEWS` is a per-process request ceiling, **not** a monetary budget. There are at most two provider calls per review, a 60-second timeout, bounded output, concurrency control, and request throttling. Failed extraction never silently becomes deterministic output.
+- [Scope](devpost/scope.md) · [Product requirements](devpost/prd.md) · [Technical specification](devpost/spec.md)
+- [Build checklist](devpost/checklist.md) · [Feature coverage and limits](devpost/requirements-status.md)
+- [Submission checklist](devpost/hackathon-checklist.md)
 
-**Release scope: English only.** Live OpenAI tests verified exact evidence, duration boundaries and criterion omissions on synthetic English input. Earlier Spanish/Hindi experiments are archived research, not supported-release claims. Provider retention and account billing are not certified by these tests. See `evaluation/live-ai-english-results.json` and the independent-agent audit artifacts for actual results and limitations.
+Built for **Build With AI: Basics** using the Devpost Learn Skill Pack and an AI coding assistant. Source implementation began October 25, 2026. The supplied PRD was pre-existing planning; its [extracted original](devpost/source-prd.txt) is retained. Planning records document the adapted workflow and delegated testing. The official skill pack retains its [MIT license](skills/LICENSE); dependency versions are recorded in `package-lock.json`.
 
-## Features
+## License
 
-- Two to four labeled sources, 40,000 combined characters; duplicate detection and explicit coverage expectations.
-- Public HTTPS imports with DNS pinning, private-network blocking, checked redirects, size/time limits; text-PDF imports with page provenance. No authenticated imports, OCR, crawling, or scripted-page rendering.
-- Explicit English deterministic extraction for video duration, team size, zoned deadlines, criterion sets, and common deliverables. Unsupported wording remains unreviewed or unresolved.
-- Optional structured AI extraction for English materials, verbatim evidence, modality, scopes, conditions and exceptions. Restricted comparison/set/Boolean evaluation never executes source or model code.
-- Exact evidence offsets, SHA-256 source hashes, immutable review snapshots, source-to-topic graph and coverage counts.
-- Boundary tests, custom typed scenario facts, saved tests, reruns, and honest unresolved states when evidence disappears.
-- Accept/dismiss/defer decisions; organizer interpretation corrections; intentional policy suggestions; draft revision reasons, undo, baseline comparisons and downstream references.
-- Organizer-approved clarification records, printable HTML and structured JSON exports. Full source inclusion is opt-in; evidence quotes are always included.
-- Explicit private saving in SQLite, password login, owner/editor/reviewer access, optimistic concurrency, access revocation and workspace deletion.
-- Private reusable source templates and an authenticated HTTPS report webhook for an operator-selected integration destination.
-
-## Storage and access
-
-Anonymous reviews live in browser memory. Explicit private saves go into `.data/briefcheck.sqlite`. The database and `.env` are ignored by Git. No operational analytics or source-text logging is enabled. Accounts use salted scrypt password hashes and 24-hour HttpOnly, SameSite sessions. Reviewers may record decisions but cannot overwrite saved source documents; owners control access and deletion.
-
-For remote use, supply a persistent writable volume, HTTPS reverse proxy, `BRIEFCHECK_SECURE_COOKIE=true`, `BRIEFCHECK_HOSTNAME`, and an appropriate bind address. This local prototype has not been load-tested or independently security-audited for public hosting. A single-process SQLite store and per-process rate limits are not a distributed deployment design.
-
-Set `BRIEFCHECK_WEBHOOK_URL` and optionally `BRIEFCHECK_WEBHOOK_TOKEN` for a report destination you control or are authorized to use. Sending requires sign-in and a separate explicit UI confirmation. Alternatively, set `BRIEFCHECK_GITHUB_REPO=owner/repository` for a local-only public report archive using your authenticated GitHub CLI. It is restricted to loopback requests and refuses a remote bind. The UI requires explicit confirmation because the report becomes public. Do not configure it on shared/untrusted machines. This is not a native Devpost integration.
-
-## Evidence and limits
-
-- [Full PRD traceability](devpost/requirements-status.md)
-- [Verification record](devpost/verification.md)
-- [Development evaluation raw results](evaluation/development-results.json)
-- [Held-out evaluation raw results](evaluation/heldout-results.json)
-- [Hackathon checklist](devpost/hackathon-checklist.md)
-- [App map](devpost/app-map.html)
-
-The historical engine-1.0 40-case evaluation is synthetic and agent-labeled. A separate agent authored and ran 12 new adversarial cases; it found issues, preserved the failures, and verified fixes including four delayed-write permission checks. It is not independent human evaluation, a production accuracy estimate, or a comparison against a simple LLM prompt. Exact quote validity does not prove interpretation correctness. The tool does not decide eligibility, legal compliance, plagiarism, or winners, and is not endorsed by Devpost.
-
-## Provenance
-
-Created as new source code for Build With AI: Basics on October 25, 2026 (America/Chicago). The supplied `BriefCheck_Product_Requirements.docx` is pre-existing product planning; its extracted contents are preserved in `devpost/source-prd.txt`. The official MIT-licensed Devpost Learn skills are included under `skills/`; planning records identify actual authorization and outstanding learner review rather than fabricating completed interviews. Third-party dependencies and their licenses are recorded by `package-lock.json` and their installed package metadata. Synthetic fixtures are authored for this project; the public example contains short dated criterion-name excerpts with source links.
-
-## Demonstration and release status
-
-A narrated 2:41 walkthrough and seven real-app screenshots were prepared and verified. Media files are kept locally under ignored `artifacts/submission/` at the owner's request; they are not distributed through GitHub releases. See [media reproduction notes](devpost/media-pack.md) and [shipping status](devpost/shipping-status.md). Public YouTube/Vimeo publication and final Devpost submission remain separate steps.
+[MIT](LICENSE) — Copyright © 2026 Ankit Hemant Lade.

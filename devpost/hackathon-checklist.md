@@ -13,3 +13,9 @@ Checked October 25, 2026. [Official rules](https://learn-ai-basics.devpost.com/r
 - Write submission fields and learning reflections yourself, as the skill pack requires.
 
 Public source upload was performed by the agent. Registration/eligibility are user attestations. Final Devpost submission has not been performed.
+
+## Local submission media
+
+The narrated 2:41 MP4, seven 3:2 screenshots, captions, and subtitle file remain under ignored `artifacts/submission/`. Media must not be uploaded to GitHub without new authorization. The footage shows the running app with a labeled synthetic event and deterministic English analysis; the voiceover is synthetic. Browser assertions, video/audio checks, and screenshot inspection passed.
+
+To reproduce locally, run `node scripts/record-submission.mjs` and `python3 scripts/package-submission.py` with the app running on port 5173. Requires macOS `say` with Samantha, FFmpeg/FFprobe, and Playwright Chromium.
