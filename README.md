@@ -119,7 +119,7 @@ node tests/keyboard.mjs
 
 Use `BRIEFCHECK_DB=:memory: npm run dev` for a disposable test server. API tests create accounts. `CHROME_PATH` can select an existing compatible browser. Live provider and GitHub export tests are opt-in because they incur external effects.
 
-Recorded verification includes **26 passing unit tests**, browser/API workflows, keyboard checks, accessibility scans, real imports, a live English OpenAI smoke test, and a GitHub report export. A separate AI-agent review found defects that were fixed and retested. See the [verification record](devpost/verification.md) and [raw evaluation evidence](evaluation/).
+Recorded verification includes **26 passing unit tests**, browser/API workflows, keyboard checks, accessibility scans, real imports, a live English OpenAI smoke test, and a GitHub report export. A separate AI-agent review found defects that were fixed and retested. See the [raw evaluation evidence](evaluation/).
 
 The historical engine-1.0 benchmark is synthetic and agent-labeled. It is not production accuracy or independent human validation. Organizer pilots and broader conditional-language evaluation remain future work.
 
@@ -131,7 +131,7 @@ briefcheck/
 ├── server/       # API, model extraction, imports, storage, integrations
 ├── tests/        # Unit, browser, API, and accessibility checks
 ├── evaluation/   # Test cases, original failures, and retest evidence
-├── devpost/      # Required plans, feature ledger, verification, submission checklist
+├── devpost/      # Required scope, PRD, and technical specification
 ├── skills/       # Official MIT-licensed Devpost Learn Skill Pack
 ├── scripts/      # Local demo recording and packaging
 ├── reports/      # Synthetic report from the integration test
@@ -145,10 +145,8 @@ The current release accepts **2–4 documents and 40,000 combined characters**. 
 BriefCheck supports organizer review; it does not decide eligibility, legal compliance, plagiarism, or winners. It is independent of Devpost.
 
 - [Scope](devpost/scope.md) · [Product requirements](devpost/prd.md) · [Technical specification](devpost/spec.md)
-- [Build checklist](devpost/checklist.md) · [Feature coverage and limits](devpost/requirements-status.md)
-- [Submission checklist](devpost/hackathon-checklist.md)
 
-Built for **Build With AI: Basics** using the Devpost Learn Skill Pack and an AI coding assistant. Source implementation began October 25, 2026. The supplied PRD was pre-existing planning; its [extracted original](devpost/source-prd.txt) is retained. Planning records document the adapted workflow and delegated testing. The official skill pack retains its [MIT license](skills/LICENSE); dependency versions are recorded in `package-lock.json`.
+Built for **Build With AI: Basics** using the Devpost Learn Skill Pack and an AI coding assistant. Source implementation began October 25, 2026. The supplied PRD was pre-existing product planning. Planning records document the adapted workflow and delegated testing. The official skill pack retains its [MIT license](skills/LICENSE); dependency versions are recorded in `package-lock.json`.
 
 ## License
 
